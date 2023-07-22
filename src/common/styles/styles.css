@@ -13,7 +13,9 @@
     --border-radius: 8px;
     --speed: 500ms;
 }
-
+body{
+    margin: 0;
+}
 /*--------------------------------------------------------------------Ends -----------------------------------------------------*/
 #dark {
     background-color: var(--bk-bg);
@@ -29,7 +31,7 @@ body {
     margin: 0;
 }
 .App{
-    padding: 0.1rem 6rem;
+    padding: 0rem 6rem;
 }
 
 html{
@@ -44,13 +46,20 @@ html{
     height: 5rem;
     width: auto;
 }
+#dark .navbar{
+    background-color: #000000;
+}
+#light .navbar{
+    background-color: #ffffff;
+
+}
 
 .navbar {
     position: fixed;
     display: flex;
     justify-content: space-between;
     width: 90%;
-    padding: 10px 0px;
+    margin-top: 0;
 }
 .nav-left{
     justify-content: flex-start;
