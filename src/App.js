@@ -65,7 +65,7 @@ function App() {
         </div>
         {/* --------------------------------Navbar Ends here ------------------------------------------------------------- */}
         <div className="wrapper">
-          <Header/> 
+          <Header />
           <Showcase />
           <Wheel />
           <Priceplaning />
@@ -106,11 +106,14 @@ function App() {
               <img className="social-logo" src={darkGit} />
             )}
             </a>
+            
             </div>
+            <p className='pl-10 italic opacity-60'>Copyright © 2023 Sustally.</p>
           </div>
           <Footer
           isDarkMode={isDarkMode}
         />
+        
         </div>
         
         {/*-------------------------------------------------Footer Ends here ------------------------------------- */}
