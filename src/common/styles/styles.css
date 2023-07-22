@@ -29,6 +29,12 @@ body {
     padding: 0.1rem 6rem;
 }
 
+html{
+    scroll-snap-type: y mandatory;
+    max-height: 100vh;
+    overflow-y: scroll;
+    scroll-padding-top: 30px;
+}
 /*-----------------------------------------------------Navbar Style --------------------------------------------*/
 
 .nav-logo {
@@ -150,4 +156,10 @@ hr.divider {
     display: flex;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
+}
+
+/* ------------------------------------------------Scroll Snap Homepage------------------------------------------*/
+.wrapper{
+    
 }

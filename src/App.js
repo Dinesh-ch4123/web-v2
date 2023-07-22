@@ -56,17 +56,15 @@ function App() {
           </div>
         </div>
         {/* --------------------------------Navbar Ends here ------------------------------------------------------------- */}
-        <Header /> 
-        <Divider />
-        <Showcase />
-        <Divider />
-        <Wheel />
-        <Divider />
-        <Priceplaning />
-        <Divider />
-        <Contact />
-        <Divider />
-        <Footer />
+        <div className="wrapper">
+          <Header/> 
+          <Showcase />
+          <Wheel />
+          <Priceplaning/>
+          <Contact/>
+        </div>
+          <Footer />
+        
       </div>
     </ThemeContext.Provider>
   );
