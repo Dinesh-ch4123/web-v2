@@ -12,6 +12,13 @@ import Wheel from './components/Wheel';
 import Priceplaning from './components/Priceplaning';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import lightTwitter from './assets/twitter.png'
+import darkTwitter from './assets/twitter-dk.png'
+import lightLink from './assets/linkedin.png'
+import darkLink from './assets/linkedin-dk.png'
+import lightGit from './assets/github.png'
+import darkGit from './assets/github-bk.png'
+
 
 
 export const ThemeContext = createContext(null);
@@ -40,13 +47,13 @@ function App() {
             )}
           </div>
           <div className="nav-right">
-          <label className='switch-lable'>{isDarkMode==="dark"? "Dark Mode:": "Light Mode:"}</label>
+            <label className='switch-lable'>{isDarkMode === "dark" ? "Dark Mode:" : "Light Mode:"}</label>
             <ReactSwitch
               className="switch"
               offColor="#0000"
               onColor="#ffff"
               onHandleColor="#0000"
-              checkedIcon= {false}
+              checkedIcon={false}
               uncheckedIcon={false}
               onChange={toggleTheme}
               checked={isDarkMode === "dark"}
@@ -58,16 +65,56 @@ function App() {
         </div>
         {/* --------------------------------Navbar Ends here ------------------------------------------------------------- */}
         <div className="wrapper">
-          <Header/> 
+          <Header />
           <Showcase />
           <Wheel />
-          <Priceplaning/>
-          <Contact/>
+          <Priceplaning />
+          <Contact />
+          <Divider />
         </div>
-          <Footer 
-            isDarkMode= {isDarkMode}
-          />
+
+        {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
+        <div className='footer'>
+          <div className="ft-left">
+          <div className='ft-title'>
+            {isDarkMode === "dark" ? (
+              <img className="ft-logo" src={darkLogo} />
+            ) : (
+              <img className="ft-logo" src={lightLogo} />
+            )}
+            <h1 className='font-Rymaneco text-3xl'>Sustally</h1>
+            </div>
+            <div className='social'>
+            <a href='#'>
+            {isDarkMode === "light" ? (
+              <img className="social-logo" src={lightTwitter} />
+            ) : (
+              <img className="social-logo" src={darkTwitter} />
+            )}
+            </a>
+            <a href='#'>
+            {isDarkMode === "light" ? (
+              <img className="social-logo" src={lightLink} />
+            ) : (
+              <img className="social-logo" src={darkLink} />
+            )}
+            </a>
+            <a href='#'>
+            {isDarkMode === "light" ? (
+              <img className="social-logo" src={lightGit} />
+            ) : (
+              <img className="social-logo" src={darkGit} />
+            )}
+            </a>
+            </div>
+          </div>
+          <Footer
+          isDarkMode={isDarkMode}
+        />
+        </div>
         
+        {/*-------------------------------------------------Footer Ends here ------------------------------------- */}
+
       </div>
     </ThemeContext.Provider>
   );

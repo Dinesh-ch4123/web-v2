@@ -1,19 +1,29 @@
 import React from 'react'
 import '../common/styles/styles.css'
+import darkLogo from '../assets/logowhite.png'
+import lightLogo from '../assets/logoblack.png'
 
-function Footer() {
+function Footer(isDarkMode) {
   return (
     <div className='footer'>
-      <div className='ft-top'>
-        <div className='ft-tl'>
-          <h1 className='g-text'>Follow us:</h1>
-        </div>
-        <div className='ft-tr'>
-
-        </div>
-      </div>
-      <div className='ft-down'>
-
+      <div className='lists'>
+        <ul class="list-none p-5">
+          <li className='text-sky-400 font-bold'>Company</li>
+          <a href='#'><li>Privacy Policy</li></a>
+          <a href='#'><li>Company</li></a>
+          <a href='#'><li>Cookies</li></a>
+          </ul>
+          <ul class="list-none p-5">
+          <li className='text-sky-400 font-bold'>Product</li>
+          <a href='#'><li>Product wheel</li></a>
+          <a href='#'><li>Pricing</li></a>
+          </ul>
+          <ul class="list-none p-5">
+          <li className='text-sky-400 font-bold'>Industry Analysis</li>
+          <a href='#'><li>Text</li></a>
+          <a href='#'><li>Text</li></a>
+          <a href='#'><li>Text</li></a>
+          </ul>
       </div>
     </div>
   )
