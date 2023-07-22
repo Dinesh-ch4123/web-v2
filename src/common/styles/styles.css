@@ -33,9 +33,7 @@ body{
     color: var(--wt-color);
 }
 
-body {
-    margin: 0;
-}
+
 .App{
     padding: 0rem 6rem;
 }
@@ -57,13 +55,12 @@ html{
 }
 #light .navbar{
     background-color: #ffffff;
-
 }
 
 .navbar {
     position: fixed;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     width: 90%;
     margin-top: 0;
 }
@@ -178,6 +175,3 @@ hr.divider {
 }
 
 /* ------------------------------------------------Scroll Snap Homepage------------------------------------------*/
-.wrapper{
-    
-}
