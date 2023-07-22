@@ -65,7 +65,7 @@ function App() {
         </div>
         {/* --------------------------------Navbar Ends here ------------------------------------------------------------- */}
         <div className="wrapper">
-          <Header />
+          <Header/> 
           <Showcase />
           <Wheel />
           <Priceplaning />

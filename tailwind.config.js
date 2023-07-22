@@ -16,6 +16,8 @@ module.exports = {
     extend: {
       fontFamily: {
         Rymaneco: "Rymaneco",
+        Merriweather: "'Merriweather', serif",
+        Roboto : "'Roboto', sans-serif"
       },
     },
   },

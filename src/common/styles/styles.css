@@ -34,19 +34,17 @@ body{
     color: var(--wt-color);
 }
 
-body {
-    margin: 0;
-}
+
 .App{
     padding: 0rem 6rem;
 }
-/*
+
 html{
     scroll-snap-type: y mandatory;
     max-height: 100vh;
     overflow-y: scroll;
     scroll-padding-top: 30px;
-}*/
+}
 /*-----------------------------------------------------Navbar Style --------------------------------------------*/
 
 .nav-logo {
@@ -58,13 +56,12 @@ html{
 }
 #light .navbar{
     background-color: #ffffff;
-
 }
 
 .navbar {
     position: fixed;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     width: 90%;
     margin-top: 0;
 }
@@ -179,52 +176,14 @@ hr.divider {
     scroll-snap-align: start;
 }
 
-/* ------------------------------------------------Scroll Snap Homepage------------------------------------------*/
-.wrapper{
-    
-}
-
-
-
-
-
 /*-----------------------------------------------------Footer page---------------------------------------------*/
 .g-text{
     margin: 0%;
 }
-.footer{
-    display: flex;
-    justify-content: space-between;
-}
-.lists{
-    display: flex;
-    align-items: center;
-    
-    font-size: 16px;
-}
-.ft-logo{
-    width: 8rem;
-    height: auto;
-}
-.ft-title{
-    display: flex;
-    align-items: center;
-    margin: 1rem;
-}
-.social-logo{
-    width: 35px;
-    height: auto;
-    margin: 1rem;
-    transition: all 0.2s ease;
-}
-.social-logo:hover{
-    transform: scale(1.1);
 
-}
-.social{
-    display: inline-flex;
-    margin: 2rem;
-}
+
+
+
 
 
 
