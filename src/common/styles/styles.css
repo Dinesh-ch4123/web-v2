@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /*--------------------------------------------Root Styles Declaration area-----------------------------------------------------*/
 :root {
     --bk-bg: #000000;
