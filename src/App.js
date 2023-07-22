@@ -13,6 +13,7 @@ import Priceplaning from './components/Priceplaning';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+
 export const ThemeContext = createContext(null);
 
 function App() {
@@ -63,7 +64,9 @@ function App() {
           <Priceplaning/>
           <Contact/>
         </div>
-          <Footer />
+          <Footer 
+            isDarkMode= {isDarkMode}
+          />
         
       </div>
     </ThemeContext.Provider>
