@@ -69,11 +69,7 @@ function App() {
           <Header />
           <Showcase />
           <Wheel />
-<<<<<<< HEAD
-          <Priceplaning />
-=======
           <PricingPlan/>
->>>>>>> deb2d51ae268cd71a1d2d6f6651cfe3558456f6e
           <div className='contactt'>
           <Contact />
           <Divider />

@@ -53,13 +53,13 @@ html{
     height: 5rem;
     width: auto;
 }
-#dark .navbar{
+/* #dark .navbar{
     background-color: var(--bk-bg);
 }
 #light .navbar{
     background-color: var(--bk-color);
 
-}
+} */
 
 .navbar {
     position: fixed;
@@ -68,6 +68,8 @@ html{
     width: 90%;
     margin-top: 0;
     z-index: 10;
+    background: transparent;
+
 }
 .nav-left{
     justify-content: flex-start;
@@ -111,6 +113,7 @@ ul {
     height: 100%;
     display: flex;
     justify-content: flex-end;
+    
 
 }
 
