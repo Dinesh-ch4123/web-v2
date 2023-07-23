@@ -69,7 +69,7 @@ function App() {
         <div className="wrapper">
           <Header />
           <Underline />
-          <Showcase />
+          <Showcase isDarkMode={isDarkMode} />
           <Underline />
           <Wheel />
           <Underline />
