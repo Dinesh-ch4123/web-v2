@@ -67,7 +67,7 @@ html{
     justify-content: space-between;
     width: 90%;
     margin-top: 0;
-    z-index: 10;
+    z-index: 40;
     background: transparent;
 
 }
@@ -187,11 +187,17 @@ hr.divider {
     scroll-snap-align: start;
 }
 
-/* ------------------------------------------------Scroll Snap Homepage------------------------------------------*/
-.wrapper{
-    
-}
-
+/* .spotlight{
+    position:absolute;
+    top: 0%;
+    left : 13%; 
+    width: 200px;
+    height: 70vh;
+    z-index: 0;
+    clip-path: polygon(40% 2%, -19% 100%,128% 100% );
+    background:linear-gradient(180deg, white, #ffffff00 75% , #ffffff00 100%);
+    transform: rotate(-20deg);
+} */
 
 /* ------------------------------------------------Pricing plan Css------------------------------------------*/
 
