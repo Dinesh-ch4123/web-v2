@@ -91,7 +91,7 @@ export let initcards = [
 ];
 
 
-function Showcase() {
+function Showcase(isDarkMode) {
   let initreverseCards = [
     {
       id: '4',
@@ -197,13 +197,15 @@ function Showcase() {
   return (
     <div
       style={{
-        // backgroundColor: isDarkMode ? 'dark' : 'light',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        // backgroundImage: `url(${backgroundImageNew1})`,
-      }} className="tinder">
+      }} className="tinder bg-transparent">
       <h1
+<<<<<<< HEAD
         className='font-semibold	font-Merriweather	text-center  text-4xl mt-10	'>
+=======
+        className='font-semibold	text-center  text-4xl mt-5	'>
+>>>>>>> a1d3a49574f3eb5b770cc1f1558216df5c7b6dbc
         Doing Good = Doing Well
       </h1>
       <div className="tinder--cards h-[50%]" id='tinder--cards'>
@@ -236,7 +238,7 @@ function Showcase() {
             // }}
           >
             <span style={{ color: 'black', position: "absolute", right: '10%', top: '5%', fontSize: '48px', fontWeight: '900', fontFamily: 'satoshi' }}>{card.title}</span>
-            <span style={{ color: 'black', position: "absolute", right: '10%', top: '20%', fontSize: '26px', fontWeight: '400', fontFamily: 'satoshi' }}>Lorem ipsum dolor sit</span>
+            <span style={{ color: 'black', position: "absolute", right: '10%', top: '25%', fontSize: '26px', fontWeight: '400', fontFamily: 'satoshi' }}>Lorem ipsum dolor sit</span>
             <img src={require(`../assets/${card?.img}`)} />
             <h3>{card?.title}</h3>
           </div>
@@ -255,7 +257,7 @@ function Showcase() {
             if (element === undefined) return;
             element.style.zIndex = -element.style.zIndex;
           }}>
-          {/* <img src={require(isDarkMode ? '../assets/back_arrow.png' : '../assets/back_arrow_white.png')} alt="" /> */}
+          <img src={require(isDarkMode ? '../assets/back_arrow.png' : '../assets/back_arrow_white.png')} alt="" />
         </button>
         <button  id="next" onClick={() => {
           // style={{ backgroundColor: !isDarkMode ? '#232323' : "white", color: "white", fontWeight: 'bolder' }}
@@ -266,7 +268,7 @@ function Showcase() {
           if (element === undefined) return;
           element.style.zIndex = element.style.zIndex.substring(1);
         }}>
-          {/* <img src={require(isDarkMode ? '../assets/next_arrow.png' : '../assets/next_arrow_white.png')} alt="" /> */}
+          <img src={require(isDarkMode ? '../assets/next_arrow.png' : '../assets/next_arrow_white.png')} alt="" />
         </button>
       </div>
 

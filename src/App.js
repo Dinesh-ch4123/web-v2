@@ -8,8 +8,6 @@ import Navbar from './components/Navbar'
 import Header from './components/Header'
 import Showcase from './components/Showcase';
 import Divider from './components/Divider';
-import Wheel from './components/Wheel';
-import Priceplaning from './components/PricingPlan';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import lightTwitter from './assets/twitter.png'
@@ -20,6 +18,7 @@ import lightGit from './assets/github.png'
 import darkGit from './assets/github-bk.png'
 import PricingPlan from './components/PricingPlan';
 import Underline from './components/Underline';
+import ProductFeatures from './components/ProductFeatures';
 
 
 
@@ -71,7 +70,7 @@ function App() {
           <Underline />
           <Showcase isDarkMode={isDarkMode} />
           <Underline />
-          <Wheel />
+          <ProductFeatures />
           <Underline />
           <PricingPlan/>
           <Underline />

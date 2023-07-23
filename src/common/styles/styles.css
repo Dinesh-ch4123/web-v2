@@ -208,7 +208,6 @@ hr.divider {
     position: relative;
     opacity: 1;
     transition: opacity 0.1s ease-in-out;
-    background-color: #000000;
     scroll-snap-align: start;
 }
 
@@ -256,7 +255,7 @@ hr.divider {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
+    margin-top: 7%;
   }
   
   .tinder--cards-swiped {
@@ -336,14 +335,22 @@ hr.divider {
     width: 60px;
     aspect-ratio: 1/1;
     border: 0;
-    background: #ffffff;
+
     display: inline-block;
     margin: 0 8px;
+  }
+  #dark .tinder--buttons button{
+    background-color: #ffffff;
+    color: #000;
+  }
+  #light .tinder--buttons button{
+    background-color: #ffffff;
+    box-shadow: rgb(0, 0, 0, 0.4) 2px 5px 27px;
   }
   
   .tinder--buttons button:hover {
     outline: 0;
-    background-color: #938989 !important;
+    background-color: #8e4dff !important;
     transition: 0.4s ease-in-out;
     color: white;
   }
@@ -355,15 +362,6 @@ hr.divider {
     font-size: 16px;
     vertical-align: middle;
   }
-
-  .fa-heart {
-    color: #fface4;
-  }
-  
-  .fa-remove {
-    color: #cdd6dd;
-  }
-  
   .removed {
     display: block;
     transform-style: preserve-3d;
@@ -373,7 +371,11 @@ hr.divider {
     transform: rotateY(180deg);
   }
   
+/*-------------------------------------------------Product Wheel------------------------------------------------*/
 
+
+
+/*-------------------------------------------------End of Product Wheel------------------------------------------*/
 
 /* ------------------------------------------------Pricing plan Css------------------------------------------*/
 
