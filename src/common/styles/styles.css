@@ -46,7 +46,7 @@ html{
     max-height: 100vh;
     overflow-y: scroll;
     scroll-padding-top: 30px;
-}*/
+}
 /*-----------------------------------------------------Navbar Style --------------------------------------------*/
 
 .nav-logo {
@@ -54,10 +54,10 @@ html{
     width: auto;
 }
 #dark .navbar{
-    background-color: #000000;
+    background-color: var(--bk-bg);
 }
 #light .navbar{
-    background-color: #ffffff;
+    background-color: var(--bk-color);
 
 }
 
@@ -195,6 +195,7 @@ hr.divider {
 .footer{
     display: flex;
     justify-content: space-between;
+    min-height: 25vh;
 }
 .lists{
     display: flex;
@@ -203,18 +204,18 @@ hr.divider {
     font-size: 16px;
 }
 .ft-logo{
-    width: 8rem;
+    width: 5rem;
     height: auto;
 }
 .ft-title{
     display: flex;
     align-items: center;
-    margin: 1rem;
+    margin: 0rem 1rem;
 }
 .social-logo{
-    width: 35px;
+    width: 25px;
     height: auto;
-    margin: 0rem 1rem;
+    margin: 0rem 0.7rem;
     transition: all 0.2s ease;
 }
 .social-logo:hover{
@@ -223,11 +224,14 @@ hr.divider {
 }
 .social{
     display: inline-flex;
-    margin: 2rem;
+    margin: 0rem 2rem;
 }
 
 
+.contact{
+    min-height: 65vh;
 
+}
 
 
 

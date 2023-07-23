@@ -71,7 +71,7 @@ function App() {
           <Priceplaning />
           <Contact />
           <Divider />
-        </div>
+        
 
         {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
         <div className='footer'>
@@ -108,12 +108,13 @@ function App() {
             </a>
             
             </div>
-            <p className='pl-10 italic opacity-60'>Copyright © 2023 Sustally.</p>
+            <p className='pl-10 pt-7 pt-1 text-xs italic opacity-60'>Copyright © 2023 Sustally.</p>
           </div>
           <Footer
           isDarkMode={isDarkMode}
         />
         
+        </div>
         </div>
         
         {/*-------------------------------------------------Footer Ends here ------------------------------------- */}
