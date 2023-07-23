@@ -69,10 +69,9 @@ function App() {
           <Showcase />
           <Wheel />
           <Priceplaning />
+          <div className='contactt'>
           <Contact />
           <Divider />
-        
-
         {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
         <div className='footer'>
           <div className="ft-left">
@@ -114,6 +113,7 @@ function App() {
           isDarkMode={isDarkMode}
         />
         
+        </div>
         </div>
         </div>
         

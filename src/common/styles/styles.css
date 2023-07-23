@@ -184,7 +184,10 @@ hr.divider {
     
 }
 
-
+.contactt{
+    min-width: 100vh;
+    
+}
 
 
 
@@ -229,7 +232,10 @@ hr.divider {
 
 
 .contact{
-    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
 }
 

@@ -19,6 +19,9 @@ module.exports = {
         Merriweather: "'Merriweather', serif",
         Roboto : "'Roboto', sans-serif"
       },
+      colors: {
+        'custom-purple': '#8E4DFF',
+    },
     },
   },
   plugins: [],
