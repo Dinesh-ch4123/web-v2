@@ -196,7 +196,7 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
             className='w-full h-screen  pricing  flex flex-col'>
             <h1
 
-                className='font-semibold	font-satoshi	text-center  text-4xl	'>
+                className='font-semibold	font-Merriweather	text-center  text-4xl	'>
                 Pricing Plans
             </h1>
             <div style={{ justifyContent: "space-between" }} className='md:w-[80%] md:h-[75%] w-[100%] h-[100%] mt-10 flex items-center pricing-div content-between'>

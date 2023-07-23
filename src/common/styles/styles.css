@@ -351,6 +351,7 @@ hr.divider {
   justify-content: center;
   height: 100vh;
   background-color: transparent;
+  scroll-snap-align: start;
 }
 
 .pandfinnerContainer {

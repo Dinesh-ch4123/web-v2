@@ -6,7 +6,7 @@ import Underline from './Underline'
 function Contact() {
   return (
     <div className='contact'>
-      <h1 className='text-4xl font-semibold'>Contact Us</h1>
+      <h1 className='text-4xl font-semibold font-Merriweather'>Contact Us</h1>
       
       <div className='m-8 sm:m-8'>
         <h1 className='text-lg font-semibold py-1 sm:text-2xl'>My Name is  <span className='border-b border-custom-purple py-1'><input class="appearance-none bg-transparent border-none text-white-700 py-1 px-2 leading-tight focus:outline-non" type="text" placeholder="Your Name" aria-label="Full name"></input></span>.</h1>

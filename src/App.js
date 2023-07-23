@@ -1,6 +1,6 @@
 
 import './common/styles/styles.css';
-import { createContext, useState } from 'react';
+import { createContext, useState,useEffect, useRef } from 'react';
 import ReactSwitch from 'react-switch'
 import darkLogo from './assets/logowhite.png'
 import lightLogo from './assets/logoblack.png'
@@ -19,19 +19,57 @@ import darkGit from './assets/github-bk.png'
 import PricingPlan from './components/PricingPlan';
 import Underline from './components/Underline';
 import ProductFeatures from './components/ProductFeatures';
-
+import {
+  BrowserRouter,
+  useNavigate,
+  Routes,
+  Route,
+  Link,
+  useLocation 
+} from "react-router-dom";
 
 
 export const ThemeContext = createContext(null);
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState("dark")
+const [isDarkMode, setIsDarkMode] = useState("dark")
 
-  const toggleTheme = () => {
-    setIsDarkMode((curr) => (curr === "light" ? "dark" : "light"));
+const toggleTheme = () => {
+setIsDarkMode((curr) => (curr === "light" ? "dark" : "light"));
+}
 
+{/* --------------------------------Smooth Scroll on click starts here ------------------------------------------------------------- */}
+
+const navigate = useNavigate()
+const ProductAndFeatureRef = useRef(null);
+const PricingPlanRef = useRef(null);
+const ContactusRef = useRef(null);
+
+const [scrollToContactUs, setScrollTocontactus] = useState(false);
+const [scrollToProduct, setscrollToProduct] = useState(false);
+const [scrollToPricing, setscrollToPricing] = useState(false);
+
+useEffect(() => {
+  if (scrollToContactUs) {
+    setScrollTocontactus(false);
+    ContactusRef.current?.scrollIntoView({ behavior: "smooth" });
   }
+  if (scrollToProduct) {
+    setscrollToProduct(false);
+    ProductAndFeatureRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+  if (scrollToPricing) {
+    setscrollToPricing(false);
+    PricingPlanRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+}, [scrollToContactUs, scrollToProduct, scrollToPricing]);
 
+const navigateHome = () => {
+// 👇️ navigate to /
+navigate('/');
+};
+
+{/* --------------------------------Smooth Scroll on Click ends here ------------------------------------------------------------- */}
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
@@ -65,20 +103,63 @@ function App() {
           </div>
         </div>
         {/* --------------------------------Navbar Ends here ------------------------------------------------------------- */}
-        <div className="wrapper">
-          <Header />
-          <Underline />
-          <Showcase isDarkMode={isDarkMode} />
-          <Underline />
-          <ProductFeatures 
-            isDarkMode={isDarkMode}
+        
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div >
+                <Header />
+                <Underline />
+                <Showcase isDarkMode={isDarkMode} />
+                <Underline />
+                <ProductFeatures 
+                isDarkMode={isDarkMode}
+                />
+                <Underline />
+                <PricingPlan/>
+                <Underline />
+                <div className='contactt'>
+                  <Contact />
+                  <Divider />
+                </div>
+
+              </div>
+            }
           />
-          <Underline />
-          <PricingPlan/>
-          <Underline />
-          <div className='contactt'>
-          <Contact />
-          <Divider />
+
+          {/* <Route
+            path="/blog"
+            element={
+              <Blog
+                setScrollTocontactus={setScrollTocontactus}
+                setscrollToProduct={setscrollToProduct}
+                setscrollToPricing={setscrollToPricing}
+                ContactusRef={ContactusRef}
+                Path={Path}
+                setCookiesopen={setCookiesopen}
+                isDarkMode={isDarkMode}
+              />
+            }
+          />
+            <Route
+              path="/faq"
+              element={
+                <Faq
+                  faqpopupformRef={faqpopupformRef}
+                  sendEmailForFaqPopup={sendEmailForFaqPopup}
+                  setScrollTocontactus={setScrollTocontactus}
+                  setscrollToProduct={setscrollToProduct}
+                  setscrollToPricing={setscrollToPricing}
+                  ContactusRef={ContactusRef}
+                  Path={Path}
+                  setCookiesopen={setCookiesopen}
+                  isDarkMode={isDarkMode}
+                />
+              }
+            /> */}
+        </Routes>
+
           {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
         <div className='footer'>
           <div className="ft-left">
@@ -120,13 +201,12 @@ function App() {
           isDarkMode={isDarkMode}
         />
         
+        
         </div>
-        </div>
-        </div>
+      </div>
         
         {/*-------------------------------------------------Footer Ends here ------------------------------------- */}
 
-      </div>
     </ThemeContext.Provider>
   );
 }
