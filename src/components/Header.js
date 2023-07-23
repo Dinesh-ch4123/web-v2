@@ -7,7 +7,7 @@ function Header() {
   const [height, setHeight] = useState(0);
   return (
     <>
-    <div style={{ width: `${100 - height}%`,top:'0%', left: '0%' }} className='absolute'>
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} style={{ width: `${100 - height}%`,top:'0%', left: '0%' }} className='absolute'>
         <svg
           style={{}}
           width="100%" height="100%" viewBox="0 0 1180 546" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,8 +26,8 @@ function Header() {
             </linearGradient>
           </defs>
         </svg>
-      </div>
-    <div className="header ">
+      </motion.div>
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="header ">
       <div className="flex-row text-center">
         <h1 className="text-8xl font-Rymaneco md:text-9xl pt-20">Sustally</h1>      
         <p className="mt-10 max-w-sm md:max-w-lg font-Roboto text-xl">
@@ -35,7 +35,7 @@ function Header() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-    </div>
+    </motion.div>
     </>
 
   )
