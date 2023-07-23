@@ -343,5 +343,9 @@ hr.underline{
         display: flex;
         flex-direction: column;
     }
+    .pricing-div{
+        display: flex;
+        flex-direction: column;
+    }
 
 }

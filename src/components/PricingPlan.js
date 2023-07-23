@@ -199,7 +199,7 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                 className='font-semibold	font-satoshi	text-center  text-4xl	'>
                 Pricing Plans
             </h1>
-            <div style={{ justifyContent: "space-between" }} className='w-[80%] h-[75%] mt-10 flex items-center content-between'>
+            <div style={{ justifyContent: "space-between" }} className='md:w-[80%] md:h-[75%] w-[100%] h-[100%] mt-10 flex items-center pricing-div content-between'>
                 <div style={{ justifyContent: 'space-around' }} className='toggle-button w-[35%] h-[70%]  flex flex-col item-center content-between pt-2'>
                     <ToggleButtonGroup
                         style={{
