@@ -69,7 +69,7 @@ function App() {
           <Showcase />
           <Wheel />
           <Priceplaning />
-          <div className='contact'>
+          <div className='contactt'>
           <Contact />
           <Divider />
           {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
