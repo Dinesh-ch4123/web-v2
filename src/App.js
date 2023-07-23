@@ -19,6 +19,7 @@ import darkLink from './assets/linkedin-dk.png'
 import lightGit from './assets/github.png'
 import darkGit from './assets/github-bk.png'
 import PricingPlan from './components/PricingPlan';
+import Underline from './components/Underline';
 
 
 
@@ -67,9 +68,13 @@ function App() {
         {/* --------------------------------Navbar Ends here ------------------------------------------------------------- */}
         <div className="wrapper">
           <Header />
+          <Underline />
           <Showcase />
+          <Underline />
           <Wheel />
+          <Underline />
           <PricingPlan/>
+          <Underline />
           <div className='contactt'>
           <Contact />
           <Divider />

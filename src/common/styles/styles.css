@@ -170,9 +170,9 @@ hr.divider {
     border-top: 1px solid #bbb;
     margin: 1% 5%;
 }
-hr.underline{
-    border-top: 3px solid #8e4dffbd;
-    margin: 10% 15% 0% 15%;
+.underline{
+    display: flex;
+    min-height: 10vh;
 }
 
 /* ------------------------------------------------Header Section styles------------------------------------------*/

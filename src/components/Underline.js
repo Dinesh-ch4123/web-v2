@@ -3,7 +3,7 @@ import '../common/styles/styles.css'
 
 function Underline() {
   return (
-    <div><hr className='underline'/></div>
+    <div className='underline'></div>
   )
 }
 
