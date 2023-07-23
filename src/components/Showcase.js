@@ -201,11 +201,7 @@ function Showcase(isDarkMode) {
         backgroundRepeat: 'no-repeat',
       }} className="tinder bg-transparent">
       <h1
-<<<<<<< HEAD
-        className='font-semibold	font-Merriweather	text-center  text-4xl mt-10	'>
-=======
-        className='font-semibold	text-center  text-4xl mt-5	'>
->>>>>>> a1d3a49574f3eb5b770cc1f1558216df5c7b6dbc
+        className='font-semibold	font-Merriweather text-center  text-4xl mt-5	'>
         Doing Good = Doing Well
       </h1>
       <div className="tinder--cards h-[50%]" id='tinder--cards'>
