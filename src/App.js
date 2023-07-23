@@ -69,10 +69,10 @@ function App() {
           <Showcase />
           <Wheel />
           <Priceplaning />
-          <div className='contactt'>
+          <div className='contact'>
           <Contact />
           <Divider />
-        {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
+          {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
         <div className='footer'>
           <div className="ft-left">
           <div className='ft-title'>
