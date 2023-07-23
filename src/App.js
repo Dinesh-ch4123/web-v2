@@ -70,7 +70,9 @@ function App() {
           <Underline />
           <Showcase isDarkMode={isDarkMode} />
           <Underline />
-          <ProductFeatures />
+          <ProductFeatures 
+            isDarkMode={isDarkMode}
+          />
           <Underline />
           <PricingPlan/>
           <Underline />
