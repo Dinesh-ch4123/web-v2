@@ -8,18 +8,18 @@ function Footer(isDarkMode) {
     <div className='footer'>
       <div className='lists'>
         <ul class="list-none p-5">
-          <li className='text-sky-400 font-bold'>Company</li>
+          <li className='text-custom-purple font-bold'>Company</li>
           <a href='#'><li>Privacy Policy</li></a>
           <a href='#'><li>Company</li></a>
           <a href='#'><li>Cookies</li></a>
           </ul>
           <ul class="list-none p-5">
-          <li className='text-sky-400 font-bold'>Product</li>
+          <li className='text-custom-purple font-bold'>Product</li>
           <a href='#'><li>Product wheel</li></a>
           <a href='#'><li>Pricing</li></a>
           </ul>
           <ul class="list-none p-5">
-          <li className='text-sky-400 font-bold'>Industry Analysis</li>
+          <li className='text-custom-purple font-bold'>Industry Analysis</li>
           <a href='#'><li>Text</li></a>
           <a href='#'><li>Text</li></a>
           <a href='#'><li>Text</li></a>

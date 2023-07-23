@@ -165,8 +165,12 @@ ul {
 hr.divider {
     border-top: 1px solid #bbb;
     margin: 1% 5%;
-  }
-  
+}
+hr.underline{
+    border-top: 3px solid #8e4dffbd;
+    margin: 10% 15% 0% 15%;
+}
+
 /* ------------------------------------------------Header Section styles------------------------------------------*/
 #dark .header{
     background-color: var(--bk-bg);
@@ -184,10 +188,6 @@ hr.divider {
     
 }
 
-.contactt{
-    min-width: 100vh;
-    
-}
 
 
 
@@ -238,6 +238,10 @@ hr.divider {
     flex-direction: column;
 
 }
+.contact-footer{
+    display: flex;
+
+}
 
 
 
@@ -258,4 +262,9 @@ hr.divider {
         flex-direction: column;
         align-items: center;
     }
+    .contact-footer{
+        display: flex;
+        flex-direction: column;
+    }
+
 }
