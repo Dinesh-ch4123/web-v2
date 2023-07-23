@@ -9,7 +9,7 @@ import Header from './components/Header'
 import Showcase from './components/Showcase';
 import Divider from './components/Divider';
 import Wheel from './components/Wheel';
-import Priceplaning from './components/Priceplaning';
+import Priceplaning from './components/PricingPlan';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import lightTwitter from './assets/twitter.png'
@@ -18,6 +18,7 @@ import lightLink from './assets/linkedin.png'
 import darkLink from './assets/linkedin-dk.png'
 import lightGit from './assets/github.png'
 import darkGit from './assets/github-bk.png'
+import PricingPlan from './components/PricingPlan';
 
 
 
@@ -68,8 +69,8 @@ function App() {
           <Header />
           <Showcase />
           <Wheel />
-          <Priceplaning />
-          <div className='contact'>
+          <PricingPlan/>
+          <div className='contactt'>
           <Contact />
           <Divider />
           {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
