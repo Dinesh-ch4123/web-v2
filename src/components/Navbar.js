@@ -2,7 +2,7 @@ import Hamburger from 'hamburger-react';
 import '../common/styles/styles.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-
+import {Link} from 'react-scroll';
 function App() {
   return (
       <NavItem>
@@ -60,10 +60,10 @@ function DropdownMenu() {
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
-          <DropdownItem>Our Products</DropdownItem>
-          <DropdownItem>Pricing plan</DropdownItem>
+          <DropdownItem><Link to="productandfeature" spy={true} smooth={true} offset={50} duration={500}>Our Products</Link></DropdownItem>
+          <DropdownItem><Link to="pricingplan" spy={true} smooth={true} offset={50} duration={500}>Pricing plan</Link></DropdownItem>
           <DropdownItem>FAQ</DropdownItem>
-          <DropdownItem>Contact Us</DropdownItem>
+          <DropdownItem><Link to="contactt" spy={true} smooth={true} offset={50} duration={500} >Contact Us</Link></DropdownItem>
           <DropdownItem>Our Products</DropdownItem>
 
         </div>
