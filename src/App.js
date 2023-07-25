@@ -27,13 +27,13 @@ import {
   Link,
   useLocation 
 } from "react-router-dom";
-
+import { motion, useMotionValue, useSpring, useMotionValueEvent, useScroll } from 'framer-motion';
 
 export const ThemeContext = createContext(null);
 
 function App() {
 const [isDarkMode, setIsDarkMode] = useState("dark")
-
+const [isFirstPage, setIsFirstPage] = useState(true);
 const toggleTheme = () => {
 setIsDarkMode((curr) => (curr === "light" ? "dark" : "light"));
 }
@@ -69,6 +69,21 @@ const navigateHome = () => {
 navigate('/');
 };
 
+const titleRef = useRef(null);
+const { scrollY } = useScroll({
+  target: titleRef,
+  scale: ['end end', 'start start']
+});
+useMotionValueEvent(scrollY, "change", (latest)=>{
+  // console.log("Page Sroll Value" , latest);
+  if(latest > 500){
+    setIsFirstPage(false);
+  }
+  else{
+    setIsFirstPage(true);
+  }
+})
+
 {/* --------------------------------Smooth Scroll on Click ends here ------------------------------------------------------------- */}
 
   return (
@@ -78,13 +93,25 @@ navigate('/');
 
 
         <div className="navbar">
-          <div className="nav-left">
-            {isDarkMode === "light" ? (
-              <img className="nav-logo" src={lightLogo} />
-            ) : (
-              <img className="nav-logo" src={darkLogo} />
-            )}
-          </div>
+          
+          {isFirstPage ? (
+            <div className="nav-left">
+              {isDarkMode === "light" ? (
+                <img className="nav-logo" src={lightLogo} alt="sustally"/>
+              ) : (
+                <img className="nav-logo" src={darkLogo} alt="sustally"/>
+              )}
+            </div>
+          ):(
+            <motion.div className="nav-middle flex justify-start items-center md:mx-auto md:pl-40">
+              {isDarkMode === "light" ? (
+              <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={lightLogo} alt="sustally"/>
+              ) : (
+              <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={darkLogo} alt="sustally"/>
+              )}
+              <h2 initial={{x:'100'}} animate={{x:'0'}} transition={{duration:0.75, ease : "easeOut"}} className='text-3xl font-Rymaneco'><a href='/'>sustally</a></h2>
+            </motion.div>
+          )}
           <div className="nav-right">
             <label className='switch-lable'>{isDarkMode === "dark" ? "Dark Mode:" : "Light Mode:"}</label>
             <ReactSwitch
@@ -172,32 +199,32 @@ navigate('/');
           <div className="ft-left">
           <div className='ft-title'>
             {isDarkMode === "dark" ? (
-              <img className="ft-logo" src={darkLogo} />
+              <img className="ft-logo" src={darkLogo} alt="ft" />
             ) : (
-              <img className="ft-logo" src={lightLogo} />
+              <img className="ft-logo" src={lightLogo} alt="ft" />
             )}
             <h1 className='font-Rymaneco text-3xl'>Sustally</h1>
             </div>
             <div className='social'>
             <a href='#'>
             {isDarkMode === "light" ? (
-              <img className="social-logo" src={lightTwitter} />
+              <img className="social-logo" src={lightTwitter} alt="twitter" />
             ) : (
-              <img className="social-logo" src={darkTwitter} />
+              <img className="social-logo" src={darkTwitter} alt="twitter" />
             )}
             </a>
             <a href='#'>
             {isDarkMode === "light" ? (
-              <img className="social-logo" src={lightLink} />
+              <img className="social-logo" src={lightLink} alt="linkedin"/>
             ) : (
-              <img className="social-logo" src={darkLink} />
+              <img className="social-logo" src={darkLink} alt="linkedin"/>
             )}
             </a>
             <a href='#'>
             {isDarkMode === "light" ? (
-              <img className="social-logo" src={lightGit} />
+              <img className="social-logo" src={lightGit} alt="github"/>
             ) : (
-              <img className="social-logo" src={darkGit} />
+              <img className="social-logo" src={darkGit} alt="github" />
             )}
             </a>
             
