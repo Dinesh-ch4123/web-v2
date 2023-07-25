@@ -60,10 +60,10 @@ function DropdownMenu() {
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
-          <DropdownItem><Link to="productandfeature" spy={true} smooth={true} offset={50} duration={500}>Our Products</Link></DropdownItem>
-          <DropdownItem><Link to="pricingplan" spy={true} smooth={true} offset={50} duration={500}>Pricing plan</Link></DropdownItem>
+          <DropdownItem>Our Products</DropdownItem>
+          <DropdownItem>Pricing plan</DropdownItem>
           <DropdownItem>FAQ</DropdownItem>
-          <DropdownItem><Link to="contactt" spy={true} smooth={true} offset={50} duration={500} >Contact Us</Link></DropdownItem>
+          <DropdownItem>Contact Us</DropdownItem>
           <DropdownItem>Our Products</DropdownItem>
 
         </div>
