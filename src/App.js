@@ -1,6 +1,6 @@
 
 import './common/styles/styles.css';
-import { createContext, useState, useEffect, useRef } from 'react';
+import React, { createContext, useState, useEffect, useRef } from 'react';
 import ReactSwitch from 'react-switch'
 import darkLogo from './assets/logowhite.png'
 import lightLogo from './assets/logoblack.png'
@@ -27,13 +27,13 @@ import {
   Link,
   useLocation
 } from "react-router-dom";
-
+import { motion, useMotionValue, useSpring, useMotionValueEvent, useScroll } from 'framer-motion';
 
 export const ThemeContext = createContext(null);
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState("dark")
-
+  const [isFirstPage, setIsFirstPage] = useState(true);
   const toggleTheme = () => {
     setIsDarkMode((curr) => (curr === "light" ? "dark" : "light"));
   }
@@ -69,6 +69,21 @@ function App() {
     navigate('/');
   };
 
+  const titleRef = useRef(null);
+  const { scrollY } = useScroll({
+  target: titleRef,
+  scale: ['end end', 'start start']
+  });
+  useMotionValueEvent(scrollY, "change", (latest)=>{
+  // console.log("Page Sroll Value" , latest);
+  if(latest > 500){
+    setIsFirstPage(false);
+  }
+  else{
+    setIsFirstPage(true);
+  }
+  })
+
   {/* --------------------------------Smooth Scroll on Click ends here ------------------------------------------------------------- */ }
 
   return (
@@ -78,13 +93,24 @@ function App() {
 
 
         <div className="navbar">
-          <div className="nav-left">
-            {isDarkMode === "light" ? (
-              <img className="nav-logo" src={lightLogo} />
-            ) : (
-              <img className="nav-logo" src={darkLogo} />
-            )}
-          </div>
+        {isFirstPage ? (
+            <div className="nav-left">
+              {isDarkMode === "light" ? (
+                <img className="nav-logo" src={lightLogo} alt="sustally"/>
+              ) : (
+                <img className="nav-logo" src={darkLogo} alt="sustally"/>
+              )}
+            </div>
+          ):(
+            <motion.div className="nav-middle flex justify-start items-center md:mx-auto md:pl-40">
+              {isDarkMode === "light" ? (
+              <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={lightLogo} alt="sustally"/>
+              ) : (
+              <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={darkLogo} alt="sustally"/>
+              )}
+              <h2 initial={{x:'100'}} animate={{x:'0'}} transition={{duration:0.75, ease : "easeOut"}} className='text-3xl font-Rymaneco'><a href='/'>sustally</a></h2>
+            </motion.div>
+          )}
           <div className="nav-right">
             <label className='switch-lable'>{isDarkMode === "dark" ? "Dark Mode:" : "Light Mode:"}</label>
             <ReactSwitch
