@@ -3,7 +3,7 @@ import '../common/styles/styles.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-function App(setscrollToProduct) {
+function App() {
   return (
       <NavItem>
         <DropdownMenu></DropdownMenu>
@@ -42,7 +42,7 @@ function DropdownMenu() {
 
   function DropdownItem(props) {
     return (
-      <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+      <a className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
         <span className="icon-button">{props.leftIcon}</span>
         {props.children}
         <span className="icon-right">{props.rightIcon}</span>
@@ -60,10 +60,10 @@ function DropdownMenu() {
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
-          <DropdownItem>Our Products</DropdownItem>
-          <DropdownItem>Pricing plan</DropdownItem>
+          <DropdownItem><Link to="productandfeature" spy={true} smooth={true} offset={50} duration={500}>Our Products</Link></DropdownItem>
+          <DropdownItem><Link to="pricingplan" spy={true} smooth={true} offset={50} duration={500}>Pricing plan</Link></DropdownItem>
           <DropdownItem>FAQ</DropdownItem>
-          <DropdownItem>Contact Us</DropdownItem>
+          <DropdownItem><Link to="contactt" spy={true} smooth={true} offset={50} duration={500} >Contact Us</Link></DropdownItem>
           <DropdownItem>Our Products</DropdownItem>
 
         </div>

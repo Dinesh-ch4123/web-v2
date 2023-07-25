@@ -46,6 +46,7 @@ html{
     max-height: 100vh;
     overflow-y: scroll;
     scroll-padding-top: 30px;
+    scroll-behavior: smooth;
 }
 /*-----------------------------------------------------Navbar Style --------------------------------------------*/
 
