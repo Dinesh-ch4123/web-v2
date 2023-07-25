@@ -98,7 +98,14 @@ navigate('/');
               checked={isDarkMode === "dark"}
             />
             <div className="nav-m">
-              <Navbar />
+              <Navbar  
+              setscrollToProduct={setscrollToProduct}
+              setscrollToPricing={setscrollToPricing}
+              navigateHome={navigateHome}
+              ProductAndFeatureRef={ProductAndFeatureRef}
+              PricingPlanRef={PricingPlanRef}
+              ContactusRef={ContactusRef}
+              />
             </div>
           </div>
         </div>

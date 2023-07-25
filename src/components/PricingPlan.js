@@ -193,7 +193,7 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                // backgroundImage: `url(${backgroundImageNew1})`,
                 backgroundPosition: '5% 331px',
             }}
-            className='w-full h-screen  pricing  flex flex-col'>
+            className='w-full h-screen  pricing  flex flex-col' id="pricingplan"> 
             <h1
 
                 className='font-semibold	font-Merriweather	text-center  text-4xl	'>

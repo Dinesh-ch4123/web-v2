@@ -187,7 +187,7 @@ const ProductFeatures = ({ ProductAndFeatureRef, isDarkMode }) => {
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: '35% -57px',
-        }} className="PandFcontainer relative">
+        }} className="PandFcontainer relative" id="productandfeature">
             <div className='w-[30%] z-5 h-[15%] absolute bottom-0 left-0'>
                 {!isOpen && isExpolreOpen && <div
                     style={{ border: "3px solid rgb(142, 77, 255)", borderRadius: '20px', zIndex: 1 }}
