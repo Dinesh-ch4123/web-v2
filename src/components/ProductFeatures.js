@@ -228,8 +228,9 @@ const ProductFeatures = ({ ProductAndFeatureRef, isDarkMode }) => {
             <div style={{
                 width: window_innerWidth_6 * 2,
                 height: window_innerWidth_6 * 2,
-                transition: "transform 0.3s",
+                transition: "transform 0.5s",
                 borderRadius: "50%",
+                
 
             }} className='relative overflow-hidden z-10 bg-red-400 flex items-center   btn-gradient-2 justify-center content-center  rounded-full'>
 
@@ -609,15 +610,13 @@ const ProductFeatures = ({ ProductAndFeatureRef, isDarkMode }) => {
                         {data[selecteduser]['feature5'].title}
                     </span></div>
             </div>
-            <div
-                className={`shadow ${isOpen ? "showShadow" : "hideshadow"}`}>
-            </div>
+
             <div className='product_feature_details ml-[5%]'>
                 <div
                     style={{
-                        paddingLeft: '15%',
-                        paddingRight: '15%',
-                        paddingTop: '7%',
+                        paddingLeft: '10%',
+                        paddingRight: '10%',
+                        paddingTop: '10%',
                         overflow: 'hidden'
                         // boxShadow: isOpen && 'rgb(39 33 33) 2px 2px 10px 20px',
                     }}
