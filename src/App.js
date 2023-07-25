@@ -1,6 +1,6 @@
 
 import './common/styles/styles.css';
-import { createContext, useState,useEffect, useRef } from 'react';
+import { createContext, useState, useEffect, useRef } from 'react';
 import ReactSwitch from 'react-switch'
 import darkLogo from './assets/logowhite.png'
 import lightLogo from './assets/logoblack.png'
@@ -25,51 +25,51 @@ import {
   Routes,
   Route,
   Link,
-  useLocation 
+  useLocation
 } from "react-router-dom";
 
 
 export const ThemeContext = createContext(null);
 
 function App() {
-const [isDarkMode, setIsDarkMode] = useState("dark")
+  const [isDarkMode, setIsDarkMode] = useState("dark")
 
-const toggleTheme = () => {
-setIsDarkMode((curr) => (curr === "light" ? "dark" : "light"));
-}
-
-{/* --------------------------------Smooth Scroll on click starts here ------------------------------------------------------------- */}
-
-const navigate = useNavigate()
-const ProductAndFeatureRef = useRef(null);
-const PricingPlanRef = useRef(null);
-const ContactusRef = useRef(null);
-
-const [scrollToContactUs, setScrollTocontactus] = useState(false);
-const [scrollToProduct, setscrollToProduct] = useState(false);
-const [scrollToPricing, setscrollToPricing] = useState(false);
-
-useEffect(() => {
-  if (scrollToContactUs) {
-    setScrollTocontactus(false);
-    ContactusRef.current?.scrollIntoView({ behavior: "smooth" });
+  const toggleTheme = () => {
+    setIsDarkMode((curr) => (curr === "light" ? "dark" : "light"));
   }
-  if (scrollToProduct) {
-    setscrollToProduct(false);
-    ProductAndFeatureRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
-  if (scrollToPricing) {
-    setscrollToPricing(false);
-    PricingPlanRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
-}, [scrollToContactUs, scrollToProduct, scrollToPricing]);
 
-const navigateHome = () => {
-// 👇️ navigate to /
-navigate('/');
-};
+  {/* --------------------------------Smooth Scroll on click starts here ------------------------------------------------------------- */ }
 
-{/* --------------------------------Smooth Scroll on Click ends here ------------------------------------------------------------- */}
+  const navigate = useNavigate()
+  const ProductAndFeatureRef = useRef(null);
+  const PricingPlanRef = useRef(null);
+  const ContactusRef = useRef(null);
+
+  const [scrollToContactUs, setScrollTocontactus] = useState(false);
+  const [scrollToProduct, setscrollToProduct] = useState(false);
+  const [scrollToPricing, setscrollToPricing] = useState(false);
+
+  useEffect(() => {
+    if (scrollToContactUs) {
+      setScrollTocontactus(false);
+      ContactusRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+    if (scrollToProduct) {
+      setscrollToProduct(false);
+      ProductAndFeatureRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+    if (scrollToPricing) {
+      setscrollToPricing(false);
+      PricingPlanRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [scrollToContactUs, scrollToProduct, scrollToPricing]);
+
+  const navigateHome = () => {
+    // 👇️ navigate to /
+    navigate('/');
+  };
+
+  {/* --------------------------------Smooth Scroll on Click ends here ------------------------------------------------------------- */ }
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
@@ -97,13 +97,29 @@ navigate('/');
               onChange={toggleTheme}
               checked={isDarkMode === "dark"}
             />
+             <Routes>
+          <Route
+            path="/"
+            element={
+            
             <div className="nav-m">
-              <Navbar />
-            </div>
+              <Navbar
+                setscrollToProduct={setscrollToProduct}
+                setscrollToPricing={setscrollToPricing}
+                navigateHome={navigateHome}
+                ProductAndFeatureRef={ProductAndFeatureRef}
+                PricingPlanRef={PricingPlanRef}
+                ContactusRef={ContactusRef}
+                isDarkMode={isDarkMode}
+                setScrollTocontactus={setScrollTocontactus}
+              />
+            </div>}
+            />
+            </Routes>
           </div>
         </div>
         {/* --------------------------------Navbar Ends here ------------------------------------------------------------- */}
-        
+
         <Routes>
           <Route
             path="/"
@@ -113,11 +129,11 @@ navigate('/');
                 <Underline />
                 <Showcase isDarkMode={isDarkMode} />
                 <Underline />
-                <ProductFeatures 
-                isDarkMode={isDarkMode}
+                <ProductFeatures
+                  isDarkMode={isDarkMode}
                 />
                 <Underline />
-                <PricingPlan/>
+                <PricingPlan />
                 <Underline />
                 <div className='contactt'>
                   <Contact />
@@ -160,52 +176,52 @@ navigate('/');
             /> */}
         </Routes>
 
-          {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
+        {/*-------------------------------------------------Footer Starts here ------------------------------------- */}
         <div className='footer'>
           <div className="ft-left">
-          <div className='ft-title'>
-            {isDarkMode === "dark" ? (
-              <img className="ft-logo" src={darkLogo} />
-            ) : (
-              <img className="ft-logo" src={lightLogo} />
-            )}
-            <h1 className='font-Rymaneco text-3xl'>Sustally</h1>
+            <div className='ft-title'>
+              {isDarkMode === "dark" ? (
+                <img className="ft-logo" src={darkLogo} />
+              ) : (
+                <img className="ft-logo" src={lightLogo} />
+              )}
+              <h1 className='font-Rymaneco text-3xl'>Sustally</h1>
             </div>
             <div className='social'>
-            <a href='#'>
-            {isDarkMode === "light" ? (
-              <img className="social-logo" src={lightTwitter} />
-            ) : (
-              <img className="social-logo" src={darkTwitter} />
-            )}
-            </a>
-            <a href='#'>
-            {isDarkMode === "light" ? (
-              <img className="social-logo" src={lightLink} />
-            ) : (
-              <img className="social-logo" src={darkLink} />
-            )}
-            </a>
-            <a href='#'>
-            {isDarkMode === "light" ? (
-              <img className="social-logo" src={lightGit} />
-            ) : (
-              <img className="social-logo" src={darkGit} />
-            )}
-            </a>
-            
+              <a href='#'>
+                {isDarkMode === "light" ? (
+                  <img className="social-logo" src={lightTwitter} />
+                ) : (
+                  <img className="social-logo" src={darkTwitter} />
+                )}
+              </a>
+              <a href='#'>
+                {isDarkMode === "light" ? (
+                  <img className="social-logo" src={lightLink} />
+                ) : (
+                  <img className="social-logo" src={darkLink} />
+                )}
+              </a>
+              <a href='#'>
+                {isDarkMode === "light" ? (
+                  <img className="social-logo" src={lightGit} />
+                ) : (
+                  <img className="social-logo" src={darkGit} />
+                )}
+              </a>
+
             </div>
             <p className='pl-10 pt-7 pt-1 text-xs italic opacity-60'>Copyright © 2023 Sustally.</p>
           </div>
           <Footer
-          isDarkMode={isDarkMode}
-        />
-        
-        
+            isDarkMode={isDarkMode}
+          />
+
+
         </div>
       </div>
-        
-        {/*-------------------------------------------------Footer Ends here ------------------------------------- */}
+
+      {/*-------------------------------------------------Footer Ends here ------------------------------------- */}
 
     </ThemeContext.Provider>
   );

@@ -3,7 +3,7 @@ import '../common/styles/styles.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-function App() {
+function App(setscrollToProduct) {
   return (
       <NavItem>
         <DropdownMenu></DropdownMenu>
@@ -17,7 +17,7 @@ function NavItem(props) {
 
   return (
     <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+      <a className="icon-button" onClick={() => setOpen(!open)}>
       <Hamburger toggle={setOpen} toggled={open} />
       </a>
 

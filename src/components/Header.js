@@ -45,7 +45,7 @@ function Header() {
     
     <div className="header ">
       <div className="flex-row text-center">
-        <h1 className="text-7xl font-Rymaneco md:text-9xl pt-20">Sustally</h1>      
+        <h1 className="text-7xl font-Rymaneco md:text-9xl pt-20">sustally</h1>      
         <p className="mt-10 max-w-xs md:max-w-lg font-Roboto text-xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
