@@ -785,6 +785,21 @@ hr.divider {
 .contact-footer{
     display: flex;
 }
+/*-----------------------------------------------------Blog Css -----------------------------------------------------------*/
+.header-blog{
+  min-height: fit-content;
+  display: flex;
+  align-items: center;
+}
+.blog-header{
+  justify-content: center;
+}
+.blog-image{
+  background-color: #8e4dff;
+  min-width: 30vw;
+  min-height: 35vh;
+}
+
 
 
 /*-----------------------------------------------------Responsive Design Css ---------------------------------------------*/
