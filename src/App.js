@@ -19,6 +19,7 @@ import darkGit from './assets/github-bk.png'
 import PricingPlan from './components/PricingPlan';
 import Underline from './components/Underline';
 import ProductFeatures from './components/ProductFeatures';
+import CookiesModal from "./components/CookiesModal";
 import {
   BrowserRouter,
   useNavigate,
@@ -86,6 +87,18 @@ function App() {
 
   {/* --------------------------------Smooth Scroll on Click ends here ------------------------------------------------------------- */ }
 
+  //-------------------------------------Cookies start here------------------------------------------------------------------------
+  const [Cookiesopen, setCookiesopen] = React.useState(
+    localStorage.getItem("visited") ? false : true
+  );
+  const handleCookiesOpen = () => setCookiesopen(true);
+  const handleCookiesClose = () => {
+    localStorage.setItem("visited", "true");
+    setCookiesopen(false);
+  };
+
+  //-------------------------------------Cookies end here---------------------------------------------------------------------------
+
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
       <div className="App" id={isDarkMode}>
@@ -144,6 +157,12 @@ function App() {
             </Routes>
           </div>
         </div>
+        <CookiesModal
+        Cookiesopen={Cookiesopen}
+        setCookiesopen={setCookiesopen}
+        handleCookiesOpen={handleCookiesOpen}
+        handleCookiesClose={handleCookiesClose}
+        />
         {/* --------------------------------Navbar Ends here ------------------------------------------------------------- */}
 
         <Routes>
