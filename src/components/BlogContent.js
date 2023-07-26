@@ -58,8 +58,9 @@ const BlogContent = ({
                     fontSize: '50px',
                     lineHeight: '67.5px',
                     color: '#8E4DFF',
-                    paddingLeft: '50px',
-                    paddingTop: "30vh"
+                    paddingLeft: '100px',
+                    paddingTop: "15vh",
+                    paddingBottom:"50px"
                 }}>
                 Header lit, sed do eiusmod tempor
             </h1>
@@ -74,13 +75,18 @@ const BlogContent = ({
                 </div>
                 <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_52683-84601.jpg?size=626&ext=jpg&ga=GA1.1.709309883.1679486928&semt=sph" alt="" />
             </div>
-            <div className='content'>
-                <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_52683-84601.jpg?size=626&ext=jpg&ga=GA1.1.709309883.1679486928&semt=sph" alt="" />
-                <p className='blog_cont_text'>
-                    {selectedblogContent && selectedblogContent.section.content.about[1]}
+            <div className='about_company mt-14'>
+            <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_52683-84601.jpg?size=626&ext=jpg&ga=GA1.1.709309883.1679486928&semt=sph" alt="" />
+           
 
-                </p>
-            </div>
+                <div className='about_content ml-7 mr-0'>
+                    <h1 ref={abouref}> About Apple</h1>
+                    <p className='blog_cont_text mr-0'>{selectedblogContent && selectedblogContent.section.content.about[1]}
+
+                    </p>
+
+                </div>
+                 </div>
 
 
 

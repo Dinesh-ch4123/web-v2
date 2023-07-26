@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { color, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { initcards } from '../components/Showcase'
 import { useNavigate } from 'react-router-dom';
 
@@ -83,11 +83,11 @@ const BlogHeader = ({ setSelectedBlog, setSelectedBlogContent, selectedblog, set
 
 
     return (
-        <div style={{ backgroundColor: '#999999' }} className='Header_Container'>
+        <div style={{ backgroundColor:"transparent" }} className='Header_Container'>
             <div
                 style={{
-                    backgroundColor: isDarkMode ==="dark" ? '#999999' : '#999999',
-                    height: window.innerWidth * 15 / 100
+                    backgroundColor: 'transparent',
+                    height: window.innerWidth * 15/ 100
                 }}
                 className='Cards_header'>
                 <div style={{ bottom: "-13%", right: '1%', zIndex: 10 }} className={`px-4  items-center flex justify-center text-center aspect-square rounded-full absolute ${isDarkMode ==="dark" ? ' bg-black' : ' bg-white'}`}>
@@ -124,7 +124,7 @@ const BlogHeader = ({ setSelectedBlog, setSelectedBlogContent, selectedblog, set
                 </div>
                 <div
                     style={{
-                        backgroundColor: isDarkMode === "dark" ? '#999999' : '#999999'
+                        backgroundColor:"transparent"
                     }}
                     className='sub_title'
                 >
