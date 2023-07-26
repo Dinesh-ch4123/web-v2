@@ -41,6 +41,28 @@ function App() {
   }
 
   {/* --------------------------------Smooth Scroll on click starts here ------------------------------------------------------------- */ }
+  const location = useLocation();
+
+  const [Path, setPath] = useState(
+    location.pathname.toLowerCase().substring(1)
+  );
+  const [IsOnOtherPage, setIsOnOtherPage] = useState(
+    Path == "blog" || Path == "faq" ? false : true
+  );
+
+  useEffect(() => {
+    console.log(location.pathname);
+    setPath(location.pathname.toLowerCase().substring(1));
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (Path == "blog" || Path == "faq") {
+      setIsOnOtherPage(false);
+    } else {
+      setIsOnOtherPage(true);
+    }
+  }, [Path]);
+
 
   const navigate = useNavigate()
   const ProductAndFeatureRef = useRef(null);
@@ -193,7 +215,7 @@ function App() {
                 setscrollToProduct={setscrollToProduct}
                 setscrollToPricing={setscrollToPricing}
                 ContactusRef={ContactusRef}
-               // Path={Path}
+                Path={Path}
                 setCookiesopen={setCookiesopen}
                 isDarkMode={isDarkMode}
               />
