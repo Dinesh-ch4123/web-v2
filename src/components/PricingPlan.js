@@ -196,11 +196,11 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
             className='w-full h-screen  pricing  flex flex-col' id="pricingplan"> 
             <h1
 
-                className='font-semibold	font-Merriweather	text-center  text-4xl	'>
+                className='font-semibold	font-Merriweather	text-center  md:text-4xl md:mt-0 mt-10 text-2xl'>
                 Pricing Plans
             </h1>
-            <div style={{ justifyContent: "space-between" }} className='md:w-[80%] md:h-[75%] w-[100%] h-[100%] mt-10 flex items-center pricing-div content-between'>
-                <div style={{ justifyContent: 'space-around' }} className='toggle-button w-[35%] h-[70%]  flex flex-col item-center content-between pt-2'>
+            <div style={{ justifyContent: "space-between" }} className='md:w-[80%] md:h-[75%] w-[100%] h-[100%] md:mt-10 mt-7  flex items-center pricing-div content-between'>
+                <div style={{ justifyContent: 'space-around' }} className='toggle-button md:w-[35%] md:h-[70%] w-[70%] flex flex-col item-center content-between md:pt-2 pt-0'>
                     <ToggleButtonGroup
                         style={{
                             border: "1px solid #4e4646",
@@ -219,9 +219,9 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
 
                     </ToggleButtonGroup>
 
-                    <div className='w-full slider1 mt-10 '>
+                    <div className='w-full slider1 md:mt-10 mt-5'>
                         <span style={{ fontWeight: '600' }}>No. of users</span>
-                        <Box className="mt-3" sx={{}}>
+                        <Box className="md:mt-3 mt-1" sx={{}}>
                             <Slider
                                 value={userValue}
                                 onChange={handleuserChange}
@@ -239,7 +239,7 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
 
                     <div className='w-full slider1 mt-1'>
                         <span style={{ fontWeight: '600' }}>Duration</span>
-                        <Box className="mt-3" sx={{}}>
+                        <Box className="md:mt-3 mt-1" sx={{}}>
                             <Slider
                                 value={duratinoValue}
                                 onChange={handledurationChange}
@@ -258,8 +258,8 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                 <div style={{
                     boxShadow: "rgb(0 0 0) 6px 20px 20px", border: "1px solid #4e4646", borderRadius: '5px',
                     background: 'black'
-                }} className='w-[60%] relative shadow-2xl items-center content-around flex-col flex h-[100%]'>
-                    <div className='w-20 z-50 top-10 right-10 h-20 bg-white rounded-full absolute flex items-center content-center'>
+                }} className='md:w-[60%] w-[85%] relative shadow-2xl items-center content-around flex-col flex h-[100%]'>
+                    <div className='w-20 z-50 md:top-10 top-2 md:right-10 right-10 h-20 bg-white rounded-full absolute flex items-center content-center'>
                         <span style={{ color: "#151515", margin: 'auto', fontWeight: '700', fontSize: '10px' }}><b style={{ color: '#8E4DFF', fontWeight: '700', fontSize: '15px' }}><sup>₹</sup>{resultingobject[currency][userValue <= 5 ? '1-5' : userValue > 5 && userValue <= 10 ? '6-10' : '>10'][duratinoValue <= 3 ? '0' : duratinoValue > 3 && duratinoValue <= 6 ? '1' : '2']}</b>/user</span>
                     </div>
                     {/* <Chart
@@ -409,14 +409,14 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                             })}
                         </div>
                     </div>
-                    <div className='w-[75%] mt-5'>
-                        <span style={{ color: 'white', fontSize: '24px', fontWeight: '600' }}>Savings <b style={{ color: '#8E4DFF', fontWeight: '800' }}>
+                    <div className='md:w-[75%] w-[90%] mt-5'>
+                        <span style={{ color: 'white', fontSize: '20px', fontWeight: '600' }}>Savings <b style={{ color: '#8E4DFF', fontWeight: '800' }}>
                             <sup>
                                 ₹
                                 {/* $ */}
                             </sup>
                             {resultingobject[currency]['1-5'][0] - resultingobject[currency][userValue <= 5 ? '1-5' : userValue > 5 && userValue < 10 ? '6-10' : '>10'][duratinoValue <= 3 ? '0' : duratinoValue > 3 && duratinoValue <= 6 ? '1' : '2']}</b></span>
-                        <p style={{ fontSize: '20px', color: 'white' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
+                        <p style={{ fontSize: '16px', color: 'white' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
                     </div>
                 </div>
             </div>

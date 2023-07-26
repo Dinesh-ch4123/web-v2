@@ -759,7 +759,7 @@ hr.divider {
 .ft-title{
     display: flex;
     align-items: center;
-    margin: 0rem 1rem;
+    padding-bottom: 1rem;
 }
 .social-logo{
     width: 25px;
@@ -1212,6 +1212,13 @@ hr.divider {
 
 /*-----------------------------------------------------Responsive Design Css ---------------------------------------------*/
 @media only screen and (max-width: 600px) {
+  html{
+    scroll-snap-type: none;
+    max-height: none;
+    overflow-y: scroll;
+    scroll-padding-top: 0;
+    scroll-behavior: smooth;
+}
     .App{
         padding: 0;
     }    
@@ -1237,6 +1244,12 @@ hr.divider {
     }
     #productandfeature{
       display: none;
+    }
+    .lists{
+      display: none;
+    }
+    .footer{
+      min-height: 3vh;
     }
 
 }
