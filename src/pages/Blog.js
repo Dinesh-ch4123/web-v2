@@ -1,43 +1,100 @@
-import React from 'react'
+import React, { useEffect, useRef, useState, useMemo } from "react";
 
-function Blog() {
+import BlogHeader from "../components/BlogHeader";
+import BlogContent from "../components/BlogContent";
+
+const Blog = ({
+  setscrollToProduct,
+  setscrollToPricing,
+  setScrollTocontactus,
+  ContactusRef,
+  isDarkMode,
+  setCookiesopen,
+}) => {
+  const abouref = useRef(null);
+  const blogRef = useRef(null);
+  const timelineRef = useRef(null);
+  const benefitsRef = useRef(null);
+
+  const [activeSection, setactiveSection] = useState("about");
+
+  const isInViewport1 = useIsInViewport(abouref);
+
+  const isInViewport2 = useIsInViewport(timelineRef);
+
+  const isInViewport3 = useIsInViewport(benefitsRef);
+
+  useEffect(() => {
+    if (isInViewport3) {
+      setactiveSection("benefits");
+    } else if (isInViewport2) {
+      setactiveSection("timeline");
+    } else if (isInViewport1) {
+      setactiveSection("about");
+    } else {
+      setactiveSection(activeSection);
+    }
+  }, [isInViewport1, isInViewport2, isInViewport3]);
+
+  function useIsInViewport(ref) {
+    const [isIntersecting, setIsIntersecting] = useState(false);
+
+    const observer = useMemo(
+      () =>
+        new IntersectionObserver(([entry]) =>
+          setIsIntersecting(entry.isIntersecting)
+        ),
+      []
+    );
+
+    useEffect(() => {
+      observer.observe(ref.current);
+
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref, observer]);
+
+    return isIntersecting;
+  }
+
+  const [selectedblog, setSelectedBlog] = useState("");
+  useEffect(() => {
+    blogRef.current?.scrollIntoView({ behavior: "smooth" });
+    setSelectedBlog(window.location.href.split("?")[1]);
+  }, []);
+
+  const [selectedblogContent, setSelectedBlogContent] = useState(null);
+
   return (
-    <div className='header-blog'>
-      <div className='blog-header mt-24 m-5'>
-        <h1 className='text-4xl font-semibold text-custom-purple'>Header lit, sed do eiusmod tempor</h1>
-        <div className='blog-grid flex pt-14'>
-          <div className='blog-content pt-5 pr-5 md:pr-32'>
-            <h1 className='text-3xl font-semibold'>About Apple</h1>
-            <p className=''>Demo-6 sit, amet consectetur adipisicing elit. Nesciunt blanditiis, quis voluptate consequatur molestiae ex harum. Dolores ducimus vitae quidem incidunt pariatur, quaerat quod sit perspiciatis, nam saepe suscipit minus! it, amet consectetur adipisicing elit. Nesciunt blanditiis, quis voluptate consequatur molestiae ex harum. Dolores ducimus vitae quidem incidunt pariatur, quaerat quod sit perspiciatis, nam saepe suscipit minus! it, amet consectetur adipisicing elit. Nesciunt blanditiis, quis voluptate consequatur mol</p>
-          </div>
-          <div className='blog-image'>
-            <h1>Image</h1>
-          </div>
-
-        </div>
-        <div className='blog-grid flex pt-14'>
-          <div className='blog-content pt-5 pr-5 md:pr-32'>
-            <h1 className='text-3xl font-semibold'>About Apple</h1>
-            <p className=''>Demo-6 sit, amet consectetur adipisicing elit. Nesciunt blanditiis, quis voluptate consequatur molestiae ex harum. Dolores ducimus vitae quidem incidunt pariatur, quaerat quod sit perspiciatis, nam saepe suscipit minus! it, amet consectetur adipisicing elit. Nesciunt blanditiis, quis voluptate consequatur molestiae ex harum. Dolores ducimus vitae quidem incidunt pariatur, quaerat quod sit perspiciatis, nam saepe suscipit minus! it, amet consectetur adipisicing elit. Nesciunt blanditiis, quis voluptate consequatur mol</p>
-          </div>
-          <div className='blog-image'>
-            <h1>Image</h1>
-          </div>
-
-        </div>
-        <div className='blog-grid flex pt-14'>
-          <div className='blog-content pt-5 pr-5 md:pr-32'>
-            <h1 className='text-3xl font-semibold'>About Apple</h1>
-            <p className=''>Demo-6 sit, amet consectetur adipisicing elit. Nesciunt blanditiis, quis voluptate consequatur molestiae ex harum. Dolores ducimus vitae quidem incidunt pariatur, quaerat quod sit perspiciatis, nam saepe suscipit minus! it, amet consectetur adipisicing elit. Nesciunt blanditiis, quis voluptate consequatur molestiae ex harum. Dolores ducimus vitae quidem incidunt pariatur, quaerat quod sit perspiciatis, nam saepe suscipit minus! it, amet consectetur adipisicing elit. Nesciunt blanditiis, quis voluptate consequatur mol</p>
-          </div>
-          <div className='blog-image'>
-            <h1>Image</h1>
-          </div>
-
-        </div>
-      </div>
+    <div>
+    <div ref={blogRef}>
+      <BlogHeader
+        setSelectedBlog={setSelectedBlog}
+        setSelectedBlogContent={setSelectedBlogContent}
+        selectedblog={selectedblog}
+        setactiveSection={setactiveSection}
+        activeSection={activeSection}
+        benefitsRef={benefitsRef}
+        timelineRef={timelineRef}
+        abouref={abouref}
+        isDarkMode={isDarkMode}
+      />
+      <BlogContent
+        setscrollToPricing={setscrollToPricing}
+        setscrollToProduct={setscrollToProduct}
+        setScrollTocontactus={setScrollTocontactus}
+        ContactusRef={ContactusRef}
+        selectedblogContent={selectedblogContent}
+        benefitsRef={benefitsRef}
+        timelineRef={timelineRef}
+        abouref={abouref}
+        setCookiesopen={setCookiesopen}
+        isDarkMode={isDarkMode}
+      />
     </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Blog
+export default Blog;

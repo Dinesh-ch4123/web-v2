@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Hammer from 'hammerjs';
-import '../common/styles/styles.css'
+
 
 export let initcards = [
   {
@@ -90,8 +90,9 @@ export let initcards = [
   }
 ];
 
+export default function SpotifyCards({ isDarkMode }) {
+  const navigate = useNavigate();
 
-function Showcase(isDarkMode) {
   let initreverseCards = [
     {
       id: '4',
@@ -110,6 +111,7 @@ function Showcase(isDarkMode) {
       tilt: '1'
     }
   ];
+
   let allCards = document.querySelectorAll('.tinder--card');
   let totalcards = allCards.length;
   const [cards, setCards] = useState(initcards);
@@ -194,17 +196,25 @@ function Showcase(isDarkMode) {
 
 
 
+
+
+
+
+
+
   return (
     <div
       style={{
+        backgroundColor: isDarkMode ==="dark"? 'black' : 'white',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-      }} className="tinder bg-transparent">
+        // backgroundImage: `url(${backgroundImageNew1})`,
+      }} className="tinder">
       <h1
-        className='font-semibold	font-Merriweather text-center  text-4xl mt-16	'>
+        className='font-semibold	font-satoshi	text-center  text-3xl mt-10	'>
         Doing Good = Doing Well
       </h1>
-      <div className="tinder--cards h-[45%]" id='tinder--cards'>
+      <div className="tinder--cards h-[50%]" id='tinder--cards'>
         {cards.map((card, index) => (
           <div
 
@@ -221,29 +231,29 @@ function Showcase(isDarkMode) {
             className={`tinder--card`}
             style={{
               // zIndex:index,
-              // transform: 'rotate(' + -10 + 'deg)',
+              //transform: 'rotate(' + -10 + 'deg)',
               borderRadius: '10px',
               left: cards.length - index * 2 + 2 + "%",
-              // bottom: cards.length - index * 7 + 7 + "%",
+             // bottom: cards.length - index * 7 + 7 + "%",
               boxShadow: 'rgb(52 46 47) 9px -5px -122px',
             }}
             key={card?.id}
-            // onClick={(e) => {
-            //   navigate(`/blog?${card.title}`);
+            onClick={(e) => {
+              navigate(`/blog?${card.title}`);
 
-            // }}
+            }}
           >
-            <span style={{ color: 'black', position: "absolute", right: '10%', top: '5%', fontSize: '48px', fontWeight: '900', fontFamily: 'satoshi' }}>{card.title}</span>
-            <span style={{ color: 'black', position: "absolute", right: '10%', top: '25%', fontSize: '26px', fontWeight: '400', fontFamily: 'satoshi' }}>Lorem ipsum dolor sit</span>
+            <span className='' style={{ color: 'black', position: "absolute", right: '10%', top: '5%', fontSize: '36px', fontWeight: '900', fontFamily: 'satoshi' }}>{card.title}</span>
+            <span style={{ color: 'black', position: "absolute", right: '10%', top: '20%', fontSize: '20px', fontWeight: '400', fontFamily: 'satoshi' }}>Lorem ipsum dolor sit</span>
             <img src={require(`../assets/${card?.img}`)} />
             <h3>{card?.title}</h3>
           </div>
         ))}
       </div>
 
-      <div className="tinder--buttons mt-14">
+      <div className="tinder--buttons mt-10">
         <button
-          // style={{ backgroundColor: !isDarkMode ? '#232323' : "white", color: "white", fontWeight: 'bolder' }}
+          style={{ backgroundColor: !isDarkMode ==="dark" ? '#232323' : "white", color: "white", fontWeight: 'bolder' }}
           id="back" onClick={() => {
             // console.log(document.getElementById('tinder--cards'))
             let activeArray = document.querySelectorAll('.tinder--card.removed');
@@ -255,8 +265,7 @@ function Showcase(isDarkMode) {
           }}>
           <img src={require(isDarkMode ? '../assets/back_arrow.png' : '../assets/back_arrow_white.png')} alt="" />
         </button>
-        <button  id="next" onClick={() => {
-          // style={{ backgroundColor: !isDarkMode ? '#232323' : "white", color: "white", fontWeight: 'bolder' }}
+        <button style={{ backgroundColor: !isDarkMode ==="dark" ? '#232323' : "white", color: "white", fontWeight: 'bolder' }} id="next" onClick={() => {
           // console.log(document.getElementById('tinder--cards'))
           let activeArray = document.querySelectorAll('.tinder--card:not(.removed)');
           activeArray[0]?.classList.add('removed')
@@ -270,7 +279,5 @@ function Showcase(isDarkMode) {
 
 
     </div>
-  )
+  );
 }
-
-export default Showcase
