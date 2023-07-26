@@ -20,6 +20,7 @@ import PricingPlan from './components/PricingPlan';
 import Underline from './components/Underline';
 import ProductFeatures from './components/ProductFeatures';
 import CookiesModal from "./components/CookiesModal";
+import Blog from './pages/Blog'
 import {
   BrowserRouter,
   useNavigate,
@@ -136,10 +137,7 @@ function App() {
               onChange={toggleTheme}
               checked={isDarkMode === "dark"}
             />
-             <Routes>
-          <Route
-            path="/"
-            element={
+
             
             <div className="nav-m">
               <Navbar
@@ -152,9 +150,7 @@ function App() {
                 isDarkMode={isDarkMode}
                 setScrollTocontactus={setScrollTocontactus}
               />
-            </div>}
-            />
-            </Routes>
+            </div>
           </div>
         </div>
         <CookiesModal
@@ -189,7 +185,7 @@ function App() {
             }
           />
 
-          {/* <Route
+           <Route
             path="/blog"
             element={
               <Blog
@@ -197,13 +193,13 @@ function App() {
                 setscrollToProduct={setscrollToProduct}
                 setscrollToPricing={setscrollToPricing}
                 ContactusRef={ContactusRef}
-                Path={Path}
+               // Path={Path}
                 setCookiesopen={setCookiesopen}
                 isDarkMode={isDarkMode}
               />
             }
           />
-            <Route
+           {/* <Route
               path="/faq"
               element={
                 <Faq
