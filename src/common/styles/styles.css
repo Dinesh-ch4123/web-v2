@@ -932,6 +932,16 @@ hr.divider {
 .blogContent {
   width: 75vw;
 }
+.blogcontenth1{
+  font-size: 45px;
+  padding-left: 100px;
+  padding-Top: 15vh;
+  padding-Bottom:50px;
+  font-family: 'satoshi';
+  font-Weight: 700;
+  line-height: 67.5px;
+  color: #8E4DFF
+}
 #dark .blogContent{
   background-color: #000000;
 }
@@ -994,23 +1004,20 @@ hr.divider {
   left: 5rem;
 }
 
-.timeline .timeline > p {
+.timeline > p {
   font-weight: 600;
 }
 
 .year {
   width: 25%;
   position: relative;
-
-  height: 100px;
+   height: 100px;
   align-items: center;
   display: flex;
   justify-content: center;
   font-size: 20px;
   font-weight: 800;
   cursor: pointer;
-}
-.year > span {
 }
 
 .tooltip {
@@ -1302,5 +1309,40 @@ hr.divider {
     .footer{
       min-height: 3vh;
     }
-
+    .Header_Container{
+      display: none;
+    }
+    .blogcontenth1{
+      font-size: 30px;
+      padding-Top: 15vh;
+      padding-left: 40px;
+      padding-Bottom:30px;
+      font-Weight: 500;
+      line-height: 35px;
+    }
+    .about_company {
+      width: 80vw;
+      flex-direction: column;
+      text-align: center;
+    }
+    .about_company > img {
+      width: 100%;
+      padding-top: 10px;
+    }
+    .about_content {
+      width: 100%;
+    }
+     .sec{
+      width: 80vw;
+      flex-direction: column-reverse;
+      text-align: center;
+      padding-bottom: 3rem;
+    }
+.timeline{
+  display: none;
+}
+.benefits{
+display: none;
+}
+    
 }

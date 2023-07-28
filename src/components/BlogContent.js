@@ -51,17 +51,7 @@ const BlogContent = ({
     console.log(selectedblogContent)
     return (
         <div style={{ top: window.innerWidth > window.innerHeight ? "40%" : '20%' }} className='blogContent'>
-            <h1
-                style={{
-                    fontFamily: 'satoshi',
-                    fontWeight: '700',
-                    fontSize: '50px',
-                    lineHeight: '67.5px',
-                    color: '#8E4DFF',
-                    paddingLeft: '100px',
-                    paddingTop: "15vh",
-                    paddingBottom:"50px"
-                }}>
+            <h1 className='blogcontenth1'>
                 Header lit, sed do eiusmod tempor
             </h1>
             <div className='about_company'>
@@ -71,13 +61,12 @@ const BlogContent = ({
                     <p className='blog_cont_text'>{selectedblogContent && selectedblogContent.section.content.about[0]}
 
                     </p>
-
                 </div>
                 <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_52683-84601.jpg?size=626&ext=jpg&ga=GA1.1.709309883.1679486928&semt=sph" alt="" />
             </div>
-            <div className='about_company mt-14'>
-            <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_52683-84601.jpg?size=626&ext=jpg&ga=GA1.1.709309883.1679486928&semt=sph" alt="" />
-           
+            <div className='about_company sec mt-14'>
+                <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_52683-84601.jpg?size=626&ext=jpg&ga=GA1.1.709309883.1679486928&semt=sph" alt="" />
+
 
                 <div className='about_content ml-7 mr-0'>
                     <h1 ref={abouref}> About Apple</h1>
@@ -86,14 +75,14 @@ const BlogContent = ({
                     </p>
 
                 </div>
-                 </div>
+            </div>
 
 
 
 
 
 
-            <div style={{ marginBottom: '20%' }} ref={divRef} onClick={handleMouseMove}
+            <div ref={divRef} onClick={handleMouseMove}
                 className='timeline'>
                 <p ref={timelineRef} style={{ fontWeight: '800', fontSize: '30px', top: '-40%' }}>Timeline</p>
                 <div style={{ marginTop: '5%' }} className='flex  flex-row w-[100%]'>{
@@ -194,12 +183,12 @@ const BlogContent = ({
                 </div>
 
             </div>
-            <div style={{ marginTop: '15%', height: '60%' }} className='benefits'>
+            <div  className='benefits'>
 
                 <p ref={benefitsRef} style={{ fontWeight: '800', fontSize: '30px', top: '-40%' }}>Benefits</p>
-                <div style={{ height: window.innerWidth * (15 / 100) }} className={`left_box rounded-lg ${isDarkMode ==="dark"? 'dark' : 'light'} `}>Benefits Information</div>
-                <DragHandleIcon style={{ color: "#8E4DFFD4" }} />
-                <div style={{ height: window.innerWidth * (15 / 100) }} className={`righ_box rounded-lg ${isDarkMode ==="dark" ? 'dark' : 'light'}`}>
+                <div style={{ height: window.innerWidth * (15 / 100) }} className={`left_box rounded-lg ${isDarkMode === "dark" ? 'dark' : 'light'} `}>Benefits Information</div>
+                <DragHandleIcon className='equal' style={{ color: "#8E4DFFD4" }} />
+                <div style={{ height: window.innerWidth * (15 / 100) }} className={`righ_box rounded-lg ${isDarkMode === "dark" ? 'dark' : 'light'}`}>
                     <img src={require('../assets/assets/developer.png')} alt="" />
                 </div>
             </div> </div>
