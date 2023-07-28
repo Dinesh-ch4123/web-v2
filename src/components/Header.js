@@ -21,7 +21,7 @@ function Header() {
     { mobile ?(
       <div className="spotlight"> </div>
     ) : (
-      <div initial ={{opacity:-1}} animate={{opacity:1}}  style={{ width: `${100 - height}%`,top:'0%', left: '-4%'}} className='absolute'>
+      <div initial ={{opacity:-1}} animate={{opacity:1}}  style={{ width: `${100 - height}%`,top:'0%', left: '-4%'}} className='absolute '>
       <svg
         style={{}}
         width="100%" height="100%" viewBox="0 0 1180 546" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@ function Header() {
     <div className="header ">
       <div className="flex-row text-center">
         <h1 className="text-7xl font-Rymaneco md:text-9xl mt-40">
-          Sustally 
+          sustally 
 
         </h1>  
         <sub className='text-xs font-Roboto ml-40 md:ml-80'>your impACT ally</sub>   

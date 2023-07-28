@@ -127,8 +127,8 @@ function App() {
       <div className="App" id={isDarkMode}>
         {/* --------------------------------Navbar starts here ------------------------------------------------------------- */}
 
-
-        <div className="navbar bg-opacity-20 backdrop-blur-md bg-black">
+        <div className='flex mx-auto justify-center pt-2 '>
+        <div className="navbar rounded-full shadow-[0_3px_10px_rgb(0,0,0,0.2)]" >
           {isFirstPage && IsOnOtherPage? (
               <div className="nav-left">
                 {isDarkMode === "light" ? (
@@ -144,7 +144,7 @@ function App() {
                 ) : (
                 <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={darkLogo} alt="sustally"/>
                 )}
-                <h2 initial={{x:'100'}} animate={{x:'0'}} transition={{duration:0.75, ease : "easeOut"}} className='text-3xl font-Rymaneco'><a href='/'>sustally</a></h2>
+                <h2 initial={{x:'100'}} animate={{x:'0'}} transition={{duration:0.75, ease : "easeOut"}} className='text-4xl font-Rymaneco'><a href='/'>sustally</a></h2>
               </motion.div>
             )}
             <div className="nav-right ">
@@ -174,7 +174,7 @@ function App() {
             </div>
           </div>
         </div>
-
+        </div>
         <CookiesModal
         Cookiesopen={Cookiesopen}
         setCookiesopen={setCookiesopen}
