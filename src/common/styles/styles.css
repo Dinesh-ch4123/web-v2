@@ -38,7 +38,7 @@ body {
     margin: 0;
 }
 .App{
-    padding: 0rem 0rem;
+    padding: 0rem 6rem;
 }
 
 html{
@@ -753,6 +753,7 @@ hr.divider {
     display: flex;
     justify-content: space-between;
     min-height: 25vh;
+    padding: 0rem 1.5rem;
 }
 .lists{
     display: flex;
@@ -812,6 +813,7 @@ hr.divider {
   width: 100vw;
   height: 0%;
   position: fixed;
+  z-index: 50;
 }
 
 .main_header {
@@ -919,7 +921,6 @@ hr.divider {
 
 .blogContent {
   width: 70vw;
-  z-index: -10;
   left: 10%;
 }
 #dark .blogContent{
@@ -975,14 +976,16 @@ hr.divider {
 .timeline {
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   position: relative;
   margin-top: 5%;
   margin-bottom: 15%;
+  padding: 0rem;
+  left: 5rem;
 }
 
 .timeline .timeline > p {
-
   font-weight: 600;
 }
 
@@ -1032,12 +1035,12 @@ hr.divider {
   justify-content: center;
   position: relative;
   margin-top: 5%;
+  left:5rem;
   height: 220px;
 }
 
 .benefits > p {
   position: absolute;
-  left: 50px;
   top: 0;
   font-weight: 600;
 }
@@ -1165,7 +1168,7 @@ hr.divider {
   aspect-ratio: 1;
   text-align: center;
   box-shadow: 2px 2px 2px #00000033;
-  transition: 0.2s ease-in-out;
+  transition: 0.4s ease-in-out;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1176,36 +1179,67 @@ hr.divider {
 .button-wrap .button:hover {
   cursor: pointer;
   color: white;
-  transform: scale(1.1) !important;
+  transform: scale(1.1);
 }
 .button-wrap .button:first-of-type {
   z-index: 1;
   transform: rotate(0deg);
 }
+.button-wrap .button:first-of-type:hover {
+  z-index: 1;
+  transform:translate(3rem,3rem);
+  scale: 2;
+  position: relative;
+}
 .button-wrap .button:nth-of-type(2) {
   z-index: 2;
-  left: 15%;
   transform: rotate(0deg);
+}
+.button-wrap .button:nth-of-type(2):hover {
+  z-index: 2;
+  transform:translate(3rem,2rem);
+  scale: 2;
+  position: relative;
 }
 .button-wrap .button:nth-of-type(3) {
   z-index: 3;
-  left: 30%;
   transform: rotate(0deg);
+}
+.button-wrap .button:nth-of-type(3):hover {
+  z-index: 3;
+  transform:translate(3rem,1rem);
+  scale: 2;
+  position: relative;
 }
 .button-wrap .button:nth-of-type(4) {
   z-index: 4;
-  left: 45%;
   transform: rotate(0deg);
+}
+.button-wrap .button:nth-of-type(4):hover {
+  z-index: 4;
+  transform:translate(3rem,0rem);
+  scale: 2;
+  position: relative;
 }
 .button-wrap .button:nth-of-type(5) {
   z-index: 5;
-  left: 60%;
   transform: rotate(0deg);
+}
+.button-wrap .button:nth-of-type(5):hover {
+  z-index: 5;
+  transform:translate(3rem,-1rem);
+  scale: 2;
+  position: relative;
 }
 .button-wrap .button:nth-of-type(6) {
   z-index: 6;
-  left: 75%;
   transform: rotate(0deg);
+}
+.button-wrap .button:nth-of-type(6):hover {
+  z-index: 6;
+  transform:translate(3rem,-2rem);
+  scale: 2;
+  position: relative;
 }
 .button-wrap .button:last-child {
   z-index: 10;

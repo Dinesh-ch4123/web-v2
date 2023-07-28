@@ -95,7 +95,7 @@ const BlogContent = ({
 
             <div style={{ marginBottom: '20%' }} ref={divRef} onClick={handleMouseMove}
                 className='timeline'>
-                <p ref={timelineRef} style={{ fontWeight: '800', fontSize: '30px', top: '-40%', marginLeft: '50px' }}>Timeline</p>
+                <p ref={timelineRef} style={{ fontWeight: '800', fontSize: '30px', top: '-40%' }}>Timeline</p>
                 <div style={{ marginTop: '5%' }} className='flex  flex-row w-[100%]'>{
                     [2000, 2002, 2010, 2022].map((item, index) => {
                         return (
