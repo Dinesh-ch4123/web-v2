@@ -142,7 +142,7 @@ const BlogHeader = ({ setSelectedBlog, setSelectedBlogContent, selectedblog, set
                                 textDecoration: activeSection === "about" ? "underline" : 'none',
                                 color: activeSection === "about" ? "rgb(142, 77, 255)" : '',
                             }}
-                        >About the company</p>
+                        >About</p>
 
                         <p className='cursor-pointer hover:underline' onClick={() => {
                             setactiveSection('timeline')
