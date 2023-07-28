@@ -841,10 +841,11 @@ hr.divider {
 .Cards_header {
   
   align-items: center;
-  display: none;
+  display: flex;
   padding-bottom: 30px;
   position: relative;
   margin-top: 55px;
+
 }
 
 .card {
@@ -870,18 +871,19 @@ hr.divider {
   height: 100%;
   background-color: rgb(0, 0, 0);
   right: 10%;
-  bottom: 0;
   align-items: center;
   justify-content: center;
-  display: flex;
   flex-direction: column;
   margin-top: 5%;
 }
 
 .sub_title > div > p {
   color: rgb(0, 0, 0);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bolder;
+}
+#dark .sub_title > div > p {
+  color: rgb(255, 255, 255);
 }
 
 .fixed_sidebar {
@@ -909,24 +911,25 @@ hr.divider {
 }
 
 .blogContent {
-  width: 80vw;
+  width: 70vw;
   z-index: -10;
+  left: 10%;
 }
 #dark .blogContent{
   background-color: #000000;
 }
 
 .about_company {
-  width: 80vw;
-
+  width: 70vw;
   display: flex;
+  left: 9%;
+  justify-content: center;
   position: relative;
 }
 
 .about_company > p {
   position: absolute;
   left: 50px;
-
   font-weight: 600;
 
 }
@@ -935,26 +938,25 @@ hr.divider {
   margin-top: 20px;
   left: 50px;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 
 .about_content {
-  width: 60%;
-
+  width: 70%;
   padding-right: 20px;
   padding-top: 4%;
-  padding-left: 50px;
+  padding-left: 0px;
 }
 
 
 .about_content > h1 {
   font-weight: 800;
-  font-size: 40px;
+  font-size: 35px;
 }
 .about_content > p {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .about_company > img {
@@ -965,12 +967,10 @@ hr.divider {
 
 .timeline {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   position: relative;
   margin-top: 5%;
-
   margin-bottom: 15%;
 }
 
@@ -1146,19 +1146,19 @@ hr.divider {
 .button-wrap {
   font-family: helvetica neue, helvetica, arial, sans-serif;
   font-weight: 200;
-  font-size: 25px;
+  font-size: 15px;
   height: 150px;
   width: 60%;
-  margin-left: 5%;
+  margin-left: -5%;
   position: absolute;
 }
 .button-wrap .button {
-  width: 20%;
+  width: 10%;
+  margin: 10px;
   aspect-ratio: 1;
   text-align: center;
-  position: absolute;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  transition: 0.5s ease-in-out;
+  box-shadow: 2px 2px 2px #00000033;
+  transition: 0.2s ease-in-out;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1169,36 +1169,36 @@ hr.divider {
 .button-wrap .button:hover {
   cursor: pointer;
   color: white;
-  transform: rotate(0deg) !important;
+  transform: scale(1.1) !important;
 }
 .button-wrap .button:first-of-type {
   z-index: 1;
-  transform: rotate(5deg);
+  transform: rotate(0deg);
 }
 .button-wrap .button:nth-of-type(2) {
   z-index: 2;
   left: 15%;
-  transform: rotate(-5deg);
+  transform: rotate(0deg);
 }
 .button-wrap .button:nth-of-type(3) {
   z-index: 3;
   left: 30%;
-  transform: rotate(5deg);
+  transform: rotate(0deg);
 }
 .button-wrap .button:nth-of-type(4) {
   z-index: 4;
   left: 45%;
-  transform: rotate(-5deg);
+  transform: rotate(0deg);
 }
 .button-wrap .button:nth-of-type(5) {
   z-index: 5;
   left: 60%;
-  transform: rotate(5deg);
+  transform: rotate(0deg);
 }
 .button-wrap .button:nth-of-type(6) {
   z-index: 6;
   left: 75%;
-  transform: rotate(-5deg);
+  transform: rotate(0deg);
 }
 .button-wrap .button:last-child {
   z-index: 10;
