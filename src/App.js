@@ -128,40 +128,39 @@ function App() {
         {/* --------------------------------Navbar starts here ------------------------------------------------------------- */}
 
 
-        <div className="navbar">
-        {isFirstPage ? (
-            <div className="nav-left">
-              {isDarkMode === "light" ? (
-                <img className="nav-logo" src={lightLogo} alt="sustally"/>
-              ) : (
-                <img className="nav-logo" src={darkLogo} alt="sustally"/>
-              )}
-            </div>
-          ):(
-            <motion.div className="nav-middle flex justify-start items-center md:mx-auto md:pl-40">
-              {isDarkMode === "light" ? (
-              <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={lightLogo} alt="sustally"/>
-              ) : (
-              <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={darkLogo} alt="sustally"/>
-              )}
-              <h2 initial={{x:'100'}} animate={{x:'0'}} transition={{duration:0.75, ease : "easeOut"}} className='text-3xl font-Rymaneco'><a href='/'>sustally</a></h2>
-            </motion.div>
-          )}
-          <div className="nav-right">
-            <label className='switch-lable'>{isDarkMode === "dark" ? "Dark Mode:" : "Light Mode:"}</label>
-            <ReactSwitch
-              className="switch"
-              offColor="#0000"
-              onColor="#ffff"
-              onHandleColor="#0000"
-              checkedIcon={false}
-              uncheckedIcon={false}
-              onChange={toggleTheme}
-              checked={isDarkMode === "dark"}
-            />
+        <div className="navbar bg-opacity-20 backdrop-blur-md bg-black">
+          {isFirstPage && IsOnOtherPage? (
+              <div className="nav-left">
+                {isDarkMode === "light" ? (
+                  <img className="nav-logo" src={lightLogo} alt="sustally"/>
+                ) : (
+                  <img className="nav-logo" src={darkLogo} alt="sustally"/>
+                )}
+              </div>
+            ):(
+              <motion.div className="nav-middle flex justify-start items-center md:mx-auto md:pl-40 ">
+                {isDarkMode === "light" ? (
+                <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={lightLogo} alt="sustally"/>
+                ) : (
+                <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={darkLogo} alt="sustally"/>
+                )}
+                <h2 initial={{x:'100'}} animate={{x:'0'}} transition={{duration:0.75, ease : "easeOut"}} className='text-3xl font-Rymaneco'><a href='/'>sustally</a></h2>
+              </motion.div>
+            )}
+            <div className="nav-right ">
+              <label className='switch-lable'>{isDarkMode === "dark" ? "Dark Mode:" : "Light Mode:"}</label>
+              <ReactSwitch
+                className="switch"
+                offColor="#0000"
+                onColor="#ffff"
+                onHandleColor="#0000"
+                checkedIcon={false}
+                uncheckedIcon={false}
+                onChange={toggleTheme}
+                checked={isDarkMode === "dark"}
+              />
 
-            
-            <div className="nav-m">
+            <div className="nav-m ">
               <Navbar
                 setscrollToProduct={setscrollToProduct}
                 setscrollToPricing={setscrollToPricing}
@@ -175,6 +174,7 @@ function App() {
             </div>
           </div>
         </div>
+
         <CookiesModal
         Cookiesopen={Cookiesopen}
         setCookiesopen={setCookiesopen}
