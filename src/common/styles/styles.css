@@ -876,23 +876,33 @@ hr.divider {
 
 .sub_title {
   position: absolute;
-  overflow: hidden;
   height: 100%;
-  background-color: rgb(0, 0, 0);
-  right: 10%;
+  right: 3%;
+  top: 100%;
   align-items: center;
+  text-align: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 5%;
 }
 
 .sub_title > div > p {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 18px;
-  font-weight: bolder;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid ;
+  padding-right: 5rem;
+  background-color: black;
+  transition: all 0.2s ease;
 }
 #dark .sub_title > div > p {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+.sub_title>div>p:hover{
+  transform: translate(-1rem);
 }
 
 .fixed_sidebar {
@@ -920,15 +930,14 @@ hr.divider {
 }
 
 .blogContent {
-  width: 70vw;
-  left: 10%;
+  width: 75vw;
 }
 #dark .blogContent{
   background-color: #000000;
 }
 
 .about_company {
-  width: 70vw;
+  width: 75vw;
   display: flex;
   left: 9%;
   justify-content: center;
