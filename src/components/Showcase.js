@@ -219,7 +219,7 @@ export default function SpotifyCards({ isDarkMode }) {
           className='font-semibold	font-satoshi	text-center  text-3xl mt-14	'>
           Doing Good = Doing Well
         </h1>
-        <div className="tinder--cards h-[50%] md:w-2/3 w-5/6 pb-20 md:pb-0" id='tinder--cards'>
+        <div className="tinder--cards h-[50%] w-5/6 pb-20 md:pb-0" id='tinder--cards'>
           {cards.map((card, index) => (
             <div
 

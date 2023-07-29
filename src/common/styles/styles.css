@@ -183,7 +183,10 @@ hr.divider {
     display: flex;
     min-height: 10vh;
 }
-
+.divider{
+  display: flex;
+    min-height: 10vh;
+}
 /* ------------------------------------------------Header Section styles------------------------------------------*/
 #dark .header{
     background-color: var(--bk-bg);
@@ -235,18 +238,7 @@ hr.divider {
     margin-right: auto;
     margin-top: 8%;
   }
-  
-  .tinder--cards-swiped {
-    flex-grow: 1;
-    padding-top: 0px;
-    text-align: center;
-    display: flex;
-    justify-content: end;
-    padding-right: 130px;
-    align-items: flex-end;
-    z-index: 1;
-  }
-  
+
   .tinder--card {
     display: inline-block;
     width: 35%;
@@ -255,19 +247,11 @@ hr.divider {
     padding-bottom: 40px;
     overflow: hidden;
     position: absolute;
-    will-change: transform;
     transition: all 635ms ease-out;
     cursor: -webkit-grab;
     cursor: -moz-grab;
     cursor: grab;
     box-shadow: rgb(0, 0, 0, 0.4) 2px 5px 27px;
-  }
-  
-  .moving.tinder--card {
-    transition: none;
-    cursor: -webkit-grabbing;
-    cursor: -moz-grabbing;
-    cursor: grabbing;
   }
   
   .tinder--card img {
@@ -1349,5 +1333,16 @@ hr.divider {
 .benefits{
 display: none;
 }
-    
+.underline{
+  display: none;
+}
+.tinder--card {
+  width: 80%;
+}
+.tinder--cards {
+  margin-top: 30%;
+}
+  .removed {
+    display: none;
+  }
 }
