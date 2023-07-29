@@ -183,9 +183,9 @@ hr.divider {
     display: flex;
     min-height: 10vh;
 }
-.divider{
+.underline1{
   display: flex;
-    min-height: 10vh;
+  min-height: 10vh;
 }
 /* ------------------------------------------------Header Section styles------------------------------------------*/
 #dark .header{

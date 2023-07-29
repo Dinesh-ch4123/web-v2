@@ -18,6 +18,7 @@ import lightGit from './assets/github.png'
 import darkGit from './assets/github-bk.png'
 import PricingPlan from './components/PricingPlan';
 import Underline from './components/Underline';
+import Underline1 from './components/Underline1';
 import ProductFeatures from './components/ProductFeatures';
 import CookiesModal from "./components/CookiesModal";
 import Blog from './pages/Blog';
@@ -200,7 +201,7 @@ function App() {
                 <PricingPlan 
                   isDarkMode={isDarkMode}
                 />
-                <Divider />
+                <Underline1 />
                 <div className='contactt'>
                   <Contact />
                   <Divider />
