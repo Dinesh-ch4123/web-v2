@@ -9,7 +9,7 @@ export let initcards = [
     title: 'Demo-1',
     subTitle: 'Sub Title 1',
     img: 'Rectangle 20.png',
-    color: '#a1c3d3',
+    color: '#191825',
     tilt: '-7',
     section: {
       titles: ['About the company', "Timeline", 'Benefits'],
@@ -22,8 +22,8 @@ export let initcards = [
     id: '2',
     title: 'Demo-2',
     subTitle: 'Sub Title 2',
-    img: 'Rectangle 22.png',
-    color: '#519bf4',
+    img: 'Rectangle 25.png',
+    color: '#191825',
     tilt: '-3',
     section: {
       titles: ['About the company', "Timeline", 'Benefits'],
@@ -36,8 +36,8 @@ export let initcards = [
     id: '3',
     title: 'Demo-3',
     subTitle: 'Sub Title 3',
-    img: 'Rectangle 23.png',
-    color: '#ff4633',
+    img: 'Rectangle 24.png',
+    color: '#191825',
     tilt: '4',
     section: {
       titles: ['About the company', "Timeline", 'Benefits'],
@@ -50,8 +50,8 @@ export let initcards = [
     id: '4',
     title: 'Demo-4',
     subTitle: 'Sub Title 4',
-    img: 'Rectangle 24.png',
-    color: '#ffc665',
+    img: 'Rectangle 20.png',
+    color: '#191825',
     tilt: '-3',
     section: {
       titles: ['About the company', "Timeline", 'Benefits'],
@@ -65,7 +65,7 @@ export let initcards = [
     title: 'Demo-5',
     subTitle: 'Sub Title 5',
     img: 'Rectangle 25.png',
-    color: '#f673a2',
+    color: '#191825',
     tilt: '1',
     section: {
       titles: ['About the company', "Timeline", 'Benefits'],
@@ -78,8 +78,8 @@ export let initcards = [
     id: '6',
     title: 'Demo-6',
     subTitle: 'Sub Title 5',
-    img: 'Rectangle 26.png',
-    color: '#f673a2',
+    img: 'Rectangle 24.png',
+    color: '#191825',
     tilt: '1',
     section: {
       titles: ['About the company', "Timeline", 'Benefits'],
@@ -108,7 +108,7 @@ export default function SpotifyCards({ isDarkMode }) {
       title: 'Demo 4',
       subTitle: 'Sub Title 4',
       img: 'Square_-_Generalist_2x.png',
-      color: '#ffc665',
+      color: '#191825',
       tilt: '-3'
     },
     {
@@ -116,7 +116,7 @@ export default function SpotifyCards({ isDarkMode }) {
       title: 'Demo 5',
       subTitle: 'Sub Title 5',
       img: 'Zoned_44_by_Faith_McAllister_2x.png',
-      color: '#f673a2',
+      color: '#191825',
       tilt: '1'
     }
   ];
@@ -216,7 +216,7 @@ export default function SpotifyCards({ isDarkMode }) {
           // backgroundImage: `url(${backgroundImageNew1})`,
         }} className="tinder">
         <h1
-          className='font-semibold	font-satoshi	text-center  text-3xl mt-14	'>
+          className='font-semibold	font-Merriweather	text-center  text-3xl mt-14	'>
           Doing Good = Doing Well
         </h1>
         <div className="tinder--cards h-[50%] w-5/6 pb-20 md:pb-0" id='tinder--cards'>
@@ -248,8 +248,8 @@ export default function SpotifyCards({ isDarkMode }) {
 
               }}
             >
-              <span className='text-2xl md:text-5xl' style={{ color: 'black', position: "absolute", right: '10%', top: '5%', fontWeight: '900', fontFamily: 'satoshi' }}>{card.title}</span>
-              <span className='text-xl md:text-2xl' style={{ color: 'black', position: "absolute", right: '10%', top: '20%',  fontWeight: '400', fontFamily: 'satoshi' }}>Lorem ipsum dolor sit</span>
+              <span className='text-2xl md:text-5xl' style={{ color: '#FDE5EC', position: "absolute", right: '10%', top: '5%', fontWeight: '900', fontFamily: 'Roboto' }}>{card.title}</span>
+              <span className='text-xl md:text-2xl' style={{ color: '#FDE5EC', position: "absolute", right: '10%', top: '20%',  fontWeight: '400', fontFamily: 'Roboto' }}>Lorem ipsum dolor sit</span>
               <img src={require(`../assets/${card?.img}`)} />
               <h3>{card?.title}</h3>
             </div>
@@ -293,7 +293,7 @@ export default function SpotifyCards({ isDarkMode }) {
           // backgroundImage: `url(${backgroundImageNew1})`,
         }} className="tinder">
         <h1
-          className='font-semibold	font-satoshi	text-center  text-3xl mt-14	'>
+          className='font-semibold	font-Merriweather	text-center  text-3xl mt-14	'>
           Doing Good = Doing Well
         </h1>
         <div className="tinder--cards h-[50%] md:w-2/3 w-5/6 pb-20 md:pb-0" id='tinder--cards'>
@@ -325,8 +325,8 @@ export default function SpotifyCards({ isDarkMode }) {
 
               }}
             >
-              <span className='text-2xl md:text-5xl' style={{ color: 'black', position: "absolute", right: '10%', top: '5%', fontWeight: '900', fontFamily: 'satoshi' }}>{card.title}</span>
-              <span className='text-xl md:text-2xl' style={{ color: 'black', position: "absolute", right: '10%', top: '20%',  fontWeight: '400', fontFamily: 'satoshi' }}>Lorem ipsum dolor sit</span>
+              <span className='text-2xl md:text-5xl' style={{ color: '#FDE5EC', position: "absolute", right: '10%', top: '5%', fontWeight: '900', fontFamily: 'Roboto' }}>{card.title}</span>
+              <span className='text-xl md:text-2xl' style={{ color: '#FDE5EC', position: "absolute", right: '10%', top: '20%',  fontWeight: '400', fontFamily: 'Roboto' }}>Lorem ipsum dolor sit</span>
               <img src={require(`../assets/${card?.img}`)} />
               <h3>{card?.title}</h3>
             </div>
