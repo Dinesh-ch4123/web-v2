@@ -38,6 +38,18 @@ export const ThemeContext = createContext(null);
 function App() {
   const [isDarkMode, setIsDarkMode] = useState("dark")
   const [isFirstPage, setIsFirstPage] = useState(true);
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+
+
   const toggleTheme = () => {
     setIsDarkMode((curr) => (curr === "light" ? "dark" : "light"));
   }
@@ -97,17 +109,17 @@ function App() {
 
   const titleRef = useRef(null);
   const { scrollY } = useScroll({
-  target: titleRef,
-  scale: ['end end', 'start start']
+    target: titleRef,
+    scale: ['end end', 'start start']
   });
-  useMotionValueEvent(scrollY, "change", (latest)=>{
-  // console.log("Page Sroll Value" , latest);
-  if(latest > 500){
-    setIsFirstPage(false);
-  }
-  else{
-    setIsFirstPage(true);
-  }
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    // console.log("Page Sroll Value" , latest);
+    if (latest > 500) {
+      setIsFirstPage(false);
+    }
+    else {
+      setIsFirstPage(true);
+    }
   })
 
   {/* --------------------------------Smooth Scroll on Click ends here ------------------------------------------------------------- */ }
@@ -130,58 +142,86 @@ function App() {
         {/* --------------------------------Navbar starts here ------------------------------------------------------------- */}
 
         <div className='flex mx-auto justify-center pt-2 '>
-        <div className="navbar rounded-full shadow-[0_3px_10px_rgb(0,0,0,0.2)]" >
-          {isFirstPage && IsOnOtherPage? (
+          <div className="navbar rounded-full shadow-[0_3px_10px_rgb(0,0,0,0.2)]" >
+            {isFirstPage && IsOnOtherPage ? (
               <div className="nav-left">
                 {isDarkMode === "light" ? (
-                  <img className="nav-logo" src={lightLogo} alt="sustally"/>
+                  <img className="nav-logo" src={lightLogo} alt="sustally" />
                 ) : (
-                  <img className="nav-logo" src={darkLogo} alt="sustally"/>
+                  <img className="nav-logo" src={darkLogo} alt="sustally" />
                 )}
               </div>
-            ):(
+            ) : (
               <motion.div className="nav-middle flex justify-start items-center md:mx-auto md:pl-40 ">
                 {isDarkMode === "light" ? (
-                <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={lightLogo} alt="sustally"/>
+                  <img initial={{ x: '-80' }} animate={{ x: '0' }} transition={{ duration: 2, ease: "easeIn" }} className="nav-logo" src={lightLogo} alt="sustally" />
                 ) : (
-                <img initial={{x:'-80'}} animate={{x:'0'}} transition={{duration:2, ease : "easeIn"}} className="nav-logo" src={darkLogo} alt="sustally"/>
+                  <img initial={{ x: '-80' }} animate={{ x: '0' }} transition={{ duration: 2, ease: "easeIn" }} className="nav-logo" src={darkLogo} alt="sustally" />
                 )}
-                <h2 initial={{x:'100'}} animate={{x:'0'}} transition={{duration:0.75, ease : "easeOut"}} className='text-4xl font-Rymaneco'><a href='/'>sustally</a></h2>
+                <h2 initial={{ x: '100' }} animate={{ x: '0' }} transition={{ duration: 0.75, ease: "easeOut" }} className='text-4xl font-Rymaneco'><a href='/'>sustally</a></h2>
               </motion.div>
             )}
+
             <div className="nav-right ">
               <label className='switch-lable'>{isDarkMode === "dark" ? "Dark Mode:" : "Light Mode:"}</label>
-              <ReactSwitch
-                className="switch"
-                offColor="#0000"
-                onColor="#ffff"
-                onHandleColor="#0000"
-                checkedIcon={false}
-                uncheckedIcon={false}
-                onChange={toggleTheme}
-                checked={isDarkMode === "dark"}
-              />
+              <div>
+                <div
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                >
+                  <div className='toggle-btn'>
+                    <ReactSwitch
+                      className="switch"
+                      offColor="#0000"
+                      onColor="#ffff"
+                      onHandleColor="#0000"
+                      checkedIcon={false}
+                      uncheckedIcon={false}
+                      onChange={toggleTheme}
+                      checked={isDarkMode === "dark"}
+                    />
+                  </div>
+                </div>
 
-            <div className="nav-m ">
-              <Navbar
-                setscrollToProduct={setscrollToProduct}
-                setscrollToPricing={setscrollToPricing}
-                navigateHome={navigateHome}
-                ProductAndFeatureRef={ProductAndFeatureRef}
-                PricingPlanRef={PricingPlanRef}
-                ContactusRef={ContactusRef}
-                isDarkMode={isDarkMode}
-                setScrollTocontactus={setScrollTocontactus}
-              />
+                {isHovering && (
+                  <div>
+                    {isDarkMode === "dark" ?
+                      <div className='toggle-hv' style={{
+                        backgroundColor: isDarkMode==="dark"? "black":"white"
+                      }}>
+                        <p className='toggle-p'>Great Choice! Text on light mode are clearer and quicker to understand.</p>
+                      </div> : <div className='toggle-hv' style={{
+                        backgroundColor: isDarkMode==="dark"? "black":"white"
+                      }}>
+                        <p className='toggle-p'>Great Choice! Shifting to the dark mode will significantly save your battery life.</p>
+                      </div>
+                    }
+                  </div>
+                )}
+              </div>
+
+
+
+              <div className="nav-m ">
+                <Navbar
+                  setscrollToProduct={setscrollToProduct}
+                  setscrollToPricing={setscrollToPricing}
+                  navigateHome={navigateHome}
+                  ProductAndFeatureRef={ProductAndFeatureRef}
+                  PricingPlanRef={PricingPlanRef}
+                  ContactusRef={ContactusRef}
+                  isDarkMode={isDarkMode}
+                  setScrollTocontactus={setScrollTocontactus}
+                />
+              </div>
             </div>
           </div>
         </div>
-        </div>
         <CookiesModal
-        Cookiesopen={Cookiesopen}
-        setCookiesopen={setCookiesopen}
-        handleCookiesOpen={handleCookiesOpen}
-        handleCookiesClose={handleCookiesClose}
+          Cookiesopen={Cookiesopen}
+          setCookiesopen={setCookiesopen}
+          handleCookiesOpen={handleCookiesOpen}
+          handleCookiesClose={handleCookiesClose}
         />
         {/* --------------------------------Navbar Ends here ------------------------------------------------------------- */}
 
@@ -198,7 +238,7 @@ function App() {
                   isDarkMode={isDarkMode}
                 />
                 <Underline />
-                <PricingPlan 
+                <PricingPlan
                   isDarkMode={isDarkMode}
                 />
                 <Underline1 />
@@ -211,7 +251,7 @@ function App() {
             }
           />
 
-           <Route
+          <Route
             path="/blog"
             element={
               <Blog
@@ -225,7 +265,7 @@ function App() {
               />
             }
           />
-           {/* <Route
+          {/* <Route
               path="/faq"
               element={
                 <Faq
