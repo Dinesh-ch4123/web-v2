@@ -54,9 +54,9 @@ const BlogContent = ({
             <h1 className='blogcontenth1'>
                 Header lit, sed do eiusmod tempor
             </h1>
-            <div className='about_company'>
+            <div className='about_company '>
 
-                <div className='about_content'>
+                <div className='about_content font-Roboto'>
                     <h1 ref={abouref}> About Apple</h1>
                     <p className='blog_cont_text'>{selectedblogContent && selectedblogContent.section.content.about[0]}
 
@@ -68,7 +68,7 @@ const BlogContent = ({
                 <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_52683-84601.jpg?size=626&ext=jpg&ga=GA1.1.709309883.1679486928&semt=sph" alt="" />
 
 
-                <div className='about_content ml-7 mr-0'>
+                <div className='about_content ml-7 mr-0 font-Roboto'>
                     <h1 ref={abouref}> About Apple</h1>
                     <p className='blog_cont_text mr-0'>{selectedblogContent && selectedblogContent.section.content.about[1]}
 
@@ -83,7 +83,7 @@ const BlogContent = ({
 
 
             <div ref={divRef} onClick={handleMouseMove}
-                className='timeline'>
+                className='timeline font-Roboto'>
                 <p ref={timelineRef} style={{ fontWeight: '800', fontSize: '30px', top: '-40%' }}>Timeline</p>
                 <div style={{ marginTop: '5%' }} className='flex  flex-row w-[100%]'>{
                     [2000, 2002, 2010, 2022].map((item, index) => {
@@ -183,7 +183,7 @@ const BlogContent = ({
                 </div>
 
             </div>
-            <div  className='benefits'>
+            <div  className='benefits font-Roboto '>
 
                 <p ref={benefitsRef} style={{ fontWeight: '800', fontSize: '30px', top: '-40%' }}>Benefits</p>
                 <div style={{ height: window.innerWidth * (15 / 100) }} className={`left_box rounded-lg ${isDarkMode === "dark" ? 'dark' : 'light'} `}>Benefits Information</div>
