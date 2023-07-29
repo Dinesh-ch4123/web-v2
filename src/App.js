@@ -200,7 +200,7 @@ function App() {
                 <PricingPlan 
                   isDarkMode={isDarkMode}
                 />
-                <Underline />
+                <Divider />
                 <div className='contactt'>
                   <Contact />
                   <Divider />
