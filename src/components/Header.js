@@ -18,10 +18,10 @@ function Header() {
   
   return (
     <motion.div initial ={{y: -50}} animate = {{y:0}} transition={{duration:0.75, ease : "easeOut"}} >
-    { mobile ?(
+    {/* { mobile ?(
       <div className="spotlight"> </div>
-    ) : (
-      <div initial ={{opacity:-1}} animate={{opacity:1}}  style={{ width: `${100 - height}%`,top:'0%', left: '-4%'}} className='absolute '>
+    ) : ( */}
+      <div initial ={{opacity:-1}} animate={{opacity:1}}  style={{ width: `${100 - height}%`,top:'0%', left: '-4%'}} className='absolute hidden md:block'>
       <svg
         style={{}}
         width="100%" height="100%" viewBox="0 0 1180 546" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,12 +41,12 @@ function Header() {
         </defs>
       </svg>
     </div>
-    )}
+    {/* )} */}
     
     <div className="header ">
       <div className="flex-row text-center">
-        <h1 className="text-7xl font-Rymaneco md:text-9xl mt-40">
-          sustally 
+        <h1 className="text-7xl font-Rymaneco md:text-9xl md:mt-40">
+          sustally
 
         </h1>  
         <sub className='text-xs font-Roboto ml-40 md:ml-80'>your impACT ally</sub>   

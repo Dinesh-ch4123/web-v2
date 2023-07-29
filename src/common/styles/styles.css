@@ -225,7 +225,6 @@ hr.divider {
     }
     
   .tinder--cards {
-    width: 60%;
     text-align: center;
     display: flex;
     justify-content: start;
@@ -349,6 +348,10 @@ hr.divider {
   .removed > span {
     transform: rotateY(180deg);
   }
+
+  /* #dark .tinder--card{
+    color: white;
+  } */
   
 /*-------------------------------------------------Product Wheel------------------------------------------------*/
 

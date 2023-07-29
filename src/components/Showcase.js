@@ -92,7 +92,16 @@ export let initcards = [
 
 export default function SpotifyCards({ isDarkMode }) {
   const navigate = useNavigate();
-
+  const [mobile, setMobile] = useState(false);
+  window.addEventListener("resize", () => {
+    const width = window.innerWidth;
+    if(width<768){
+      setMobile(true);
+    }
+    else{
+      setMobile(false);
+    }
+  });
   let initreverseCards = [
     {
       id: '4',
@@ -194,62 +203,55 @@ export default function SpotifyCards({ isDarkMode }) {
   }, []);
 
 
-
-
-
-
-
-
-
-
+ 
   return (
-    <div
-      style={{
-        backgroundColor: isDarkMode ==="dark"? 'black' : 'white',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        // backgroundImage: `url(${backgroundImageNew1})`,
-      }} className="tinder">
-      <h1
-        className='font-semibold	font-satoshi	text-center  text-3xl mt-10	'>
-        Doing Good = Doing Well
-      </h1>
-      <div className="tinder--cards h-[50%]" id='tinder--cards'>
-        {cards.map((card, index) => (
-          <div
+      <div
+        style={{
+          backgroundColor: isDarkMode ==="dark"? 'black' : 'white',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          // backgroundImage: `url(${backgroundImageNew1})`,
+        }} className="tinder">
+        <h1
+          className='font-semibold	font-satoshi	text-center  text-3xl mt-14	'>
+          Doing Good = Doing Well
+        </h1>
+        <div className="tinder--cards h-[50%] md:w-2/3 w-5/6 pb-20 md:pb-0" id='tinder--cards'>
+          {cards.map((card, index) => (
+            <div
 
-            // onMouseDownCapture={(e) => toggleClass(e)}
-            draggable={true}
-            onDragStart={(e) => {
-              e.preventDefault();
-              e.dataTransfer.setData('text/plain', ''); // Set an empty string as the data
-              // Optionally, you can also set a custom drag image
-              e.dataTransfer.setDragImage(new Image(), 0, 0);
-              toggleClass(e);
+              // onMouseDownCapture={(e) => toggleClass(e)}
+              draggable={true}
+              onDragStart={(e) => {
+                e.preventDefault();
+                e.dataTransfer.setData('text/plain', ''); // Set an empty string as the data
+                // Optionally, you can also set a custom drag image
+                e.dataTransfer.setDragImage(new Image(), 0, 0);
+                toggleClass(e);
 
-            }}
-            className={`tinder--card`}
-            style={{
-              // zIndex:index,
-              //transform: 'rotate(' + -10 + 'deg)',
-              borderRadius: '10px',
-              left: cards.length - index * 2 + 2 + "%",
-             // bottom: cards.length - index * 7 + 7 + "%",
-              boxShadow: 'rgb(52 46 47) 9px -5px -122px',
-            }}
-            key={card?.id}
-            onClick={(e) => {
-              navigate(`/blog?${card.title}`);
+              }}
+              className={`tinder--card`}
+              style={{
+                // zIndex:index,
+                //transform: 'rotate(' + -10 + 'deg)',
+                borderRadius: '10px',
+                left: cards.length - index * 2 + 2 + "%",
+              // bottom: cards.length - index * 7 + 7 + "%",
+                boxShadow: 'rgb(52 46 47) 9px -5px -122px',
+              }}
+              key={card?.id}
+              onClick={(e) => {
+                navigate(`/blog?${card.title}`);
 
-            }}
-          >
-            <span className='' style={{ color: 'black', position: "absolute", right: '10%', top: '5%', fontSize: '36px', fontWeight: '900', fontFamily: 'satoshi' }}>{card.title}</span>
-            <span style={{ color: 'black', position: "absolute", right: '10%', top: '20%', fontSize: '20px', fontWeight: '400', fontFamily: 'satoshi' }}>Lorem ipsum dolor sit</span>
-            <img src={require(`../assets/${card?.img}`)} />
-            <h3>{card?.title}</h3>
-          </div>
-        ))}
-      </div>
+              }}
+            >
+              <span className='text-2xl md:text-5xl' style={{ color: 'black', position: "absolute", right: '10%', top: '5%', fontWeight: '900', fontFamily: 'satoshi' }}>{card.title}</span>
+              <span className='text-xl md:text-2xl' style={{ color: 'black', position: "absolute", right: '10%', top: '20%',  fontWeight: '400', fontFamily: 'satoshi' }}>Lorem ipsum dolor sit</span>
+              <img src={require(`../assets/${card?.img}`)} />
+              <h3>{card?.title}</h3>
+            </div>
+          ))}
+        </div>
 
       <div className="tinder--buttons mt-10">
         <button
@@ -279,5 +281,5 @@ export default function SpotifyCards({ isDarkMode }) {
 
 
     </div>
-  );
+  )
 }
