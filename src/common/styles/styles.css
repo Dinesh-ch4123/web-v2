@@ -172,6 +172,21 @@ ul {
 .menu-item:hover {
     opacity: 100%;
 }
+.toggle-hv{
+  margin: 10px;
+  width: 160px;
+  border: 1px solid #8E4DFF;
+  padding: 12px 20px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  position: absolute;
+  right: 4.8%;
+  top: 50px;
+}
+.toggle-p{
+  font-size: 10px;
+  font-weight: 700;
+}
 
 /* ------------------------------------------------End of Hambargar style------------------------------------------*/
 /*--------------------------------------------------Divider Css style ----------------------------------------------*/
