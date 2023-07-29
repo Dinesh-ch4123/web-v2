@@ -202,6 +202,7 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
             <div style={{ justifyContent: "space-between" }} className='md:w-[80%] md:h-[75%] w-[100%] h-[100%] md:mt-10 mt-7  flex items-center pricing-div content-between'>
                 <div style={{ justifyContent: 'space-around' }} className='toggle-button md:w-[35%] md:h-[70%] w-[70%] flex flex-col item-center content-between md:pt-2 pt-0'>
                     <ToggleButtonGroup
+                    
                         style={{
                             border: "1px solid #4e4646",
                             boxShadow: "rgb(0 0 0) 0px 16px 17px",
@@ -257,10 +258,11 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                 </div>
                 <div style={{
                     boxShadow: "rgb(0 0 0) 6px 20px 20px", border: "1px solid #4e4646", borderRadius: '5px',
-                    background: 'black'
+                    background: isDarkMode === "dark" ? "black" : "white",
+        
                 }} className='md:w-[60%] w-[85%] relative shadow-2xl items-center content-around flex-col flex h-[100%]'>
-                    <div className='w-20 z-50 md:top-10 top-2 md:right-10 right-10 h-20 bg-white rounded-full absolute flex items-center content-center'>
-                        <span style={{ color: "#151515", margin: 'auto', fontWeight: '700', fontSize: '10px' }}><b style={{ color: '#8E4DFF', fontWeight: '700', fontSize: '15px' }}><sup>₹</sup>{resultingobject[currency][userValue <= 5 ? '1-5' : userValue > 5 && userValue <= 10 ? '6-10' : '>10'][duratinoValue <= 3 ? '0' : duratinoValue > 3 && duratinoValue <= 6 ? '1' : '2']}</b>/user</span>
+                    <div style={{backgroundColor: isDarkMode === "dark" ? "white" : "black",}}className='w-20 z-50 md:top-10 top-2 md:right-10 right-10 h-20 rounded-full absolute flex items-center content-center'>
+                        <span style={{ color: isDarkMode === "dark" ? "black" : "white", margin: 'auto', fontWeight: '700', fontSize: '10px' }}><b style={{ color: '#8E4DFF', fontWeight: '700', fontSize: '15px' }}><sup>₹</sup>{resultingobject[currency][userValue <= 5 ? '1-5' : userValue > 5 && userValue <= 10 ? '6-10' : '>10'][duratinoValue <= 3 ? '0' : duratinoValue > 3 && duratinoValue <= 6 ? '1' : '2']}</b>/user</span>
                     </div>
                     {/* <Chart
 
@@ -276,7 +278,8 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                             zIndex: -1,
                             bottom: "-20px",
                             left: "-15px",
-                        }} className='text-white absolute'>1</span>
+                            color: isDarkMode === "dark" ? "white" : "black",
+                        }} className=' absolute'>1</span>
                         <span style={{
                             zIndex: -1,
                             bottom: "20px",
@@ -309,39 +312,42 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                                 console.log(userValue)
                                 if (userValue <= 5 && index == 0) {
                                     return (
-                                        <pre className='absolute text-white'
+                                        <pre className='absolute'
                                             style={{
                                                 display: 'flex',
                                                 bottom: '70%',
                                                 left: '-38px',
                                                 fontSize: '10px',
-                                                alignItems: 'center'
+                                                alignItems: 'center',
+                                                color: isDarkMode === "dark" ? "white" : "black",
                                             }}>{item}
                                             <div style={{ width: '5px', height: '2.5px', background: 'white' }}></div>
                                         </pre>
                                     )
                                 } else if (userValue > 5 && userValue <= 10 && index < 2) {
                                     return (
-                                        <pre className='absolute text-white'
+                                        <pre className='absolute '
                                             style={{
                                                 display: 'flex',
                                                 bottom: index == 0 ? '40%' : '80%',
                                                 left: index == 0 ? '-38px' : '-44px',
                                                 fontSize: '10px',
-                                                alignItems: 'center'
+                                                alignItems: 'center',
+                                                color: isDarkMode === "dark" ? "white" : "black",
                                             }}>{item}
                                             <div style={{ width: '5px', height: '2.5px', background: 'white' }}></div>
                                         </pre>
                                     )
                                 } else if (userValue > 10 && index < 3) {
                                     return (
-                                        <pre className='absolute text-white'
+                                        <pre className='absolute'
                                             style={{
                                                 display: 'flex',
                                                 bottom: index == 0 ? '30%' : index == 1 ? '60%' : '90%',
                                                 left: index == 0 ? '-38px' : index == 1 ? '-44px' : '-21px',
                                                 fontSize: '10px',
-                                                alignItems: 'center'
+                                                alignItems: 'center',
+                                                color: isDarkMode === "dark" ? "white" : "black",
                                             }}>{item}
                                             <div style={{ width: '5px', height: '2.5px', background: 'white' }}></div>
                                         </pre>
@@ -365,13 +371,14 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                                 console.log(userValue)
                                 if ((duratinoValue === 3 || duratinoValue === 1) && index == 0) {
                                     return (
-                                        <pre className='absolute text-white'
+                                        <pre className='absolute'
                                             style={{
                                                 display: 'flex',
                                                 left: '88%',
                                                 bottom: '-20px',
                                                 fontSize: '10px',
                                                 alignItems: 'center', justifyContent: 'center',
+                                                color: isDarkMode === "dark" ? "white" : "black",
 
                                             }}>{item}
                                             <div style={{ width: '2.5px', height: '5px', background: 'white', position: 'absolute', top: '-10px' }}></div>
@@ -379,26 +386,28 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                                     )
                                 } else if (duratinoValue == 6 && index < 2) {
                                     return (
-                                        <pre className='absolute text-white'
+                                        <pre className='absolute'
                                             style={{
                                                 display: 'flex',
                                                 left: index == 0 ? '40%' : '90%',
                                                 bottom: '-20px',
                                                 fontSize: '10px',
-                                                alignItems: 'center'
+                                                alignItems: 'center',
+                                                color: isDarkMode === "dark" ? "white" : "black",
                                             }}>{item}
                                             <div style={{ width: '2.5px', height: '5px', background: 'white', position: 'absolute', top: '-10px' }}></div>
                                         </pre>
                                     )
                                 } else if (duratinoValue == 12 && index < 3) {
                                     return (
-                                        <pre className='absolute text-white'
+                                        <pre className='absolute'
                                             style={{
                                                 display: 'flex',
                                                 left: index == 0 ? '30%' : index == 1 ? '60%' : '90%',
                                                 bottom: '-20px',
                                                 fontSize: '10px',
-                                                alignItems: 'center'
+                                                alignItems: 'center',
+                                                color: isDarkMode === "dark" ? "white" : "black",
                                             }}>{item}
                                             <div style={{ width: '2.5px', height: '5px', background: 'white', position: 'absolute', top: '-10px' }}></div>
                                         </pre>
@@ -410,13 +419,13 @@ const PricingPlan = ({ PricingPlanRef, isDarkMode }) => {
                         </div>
                     </div>
                     <div className='md:w-[75%] w-[90%] mt-5'>
-                        <span style={{ color: 'white', fontSize: '20px', fontWeight: '600' }}>Savings <b style={{ color: '#8E4DFF', fontWeight: '800' }}>
+                        <span style={{ color: isDarkMode === "dark" ? "white" : "black", fontSize: '20px', fontWeight: '600' }}>Savings <b style={{ color: '#8E4DFF', fontWeight: '800' }}>
                             <sup>
                                 ₹
                                 {/* $ */}
                             </sup>
                             {resultingobject[currency]['1-5'][0] - resultingobject[currency][userValue <= 5 ? '1-5' : userValue > 5 && userValue < 10 ? '6-10' : '>10'][duratinoValue <= 3 ? '0' : duratinoValue > 3 && duratinoValue <= 6 ? '1' : '2']}</b></span>
-                        <p style={{ fontSize: '16px', color: 'white' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
+                        <p style={{ fontSize: '16px', color: isDarkMode === "dark" ? "white" : "black", }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
                     </div>
                 </div>
             </div>

@@ -236,7 +236,9 @@ function App() {
                   isDarkMode={isDarkMode}
                 />
                 <Underline />
-                <PricingPlan />
+                <PricingPlan 
+                  isDarkMode={isDarkMode}
+                />
                 <Underline />
                 <div className='contactt'>
                   <Contact />
