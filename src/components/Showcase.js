@@ -205,7 +205,87 @@ export default function SpotifyCards({ isDarkMode }) {
 
  
   return (
-      <div
+    <div>
+    {mobile ?
+      (
+        <div
+        style={{
+          backgroundColor: isDarkMode ==="dark"? 'black' : 'white',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          // backgroundImage: `url(${backgroundImageNew1})`,
+        }} className="tinder">
+        <h1
+          className='font-semibold	font-satoshi	text-center  text-3xl mt-14	'>
+          Doing Good = Doing Well
+        </h1>
+        <div className="tinder--cards h-[50%] md:w-2/3 w-5/6 pb-20 md:pb-0" id='tinder--cards'>
+          {cards.map((card, index) => (
+            <div
+
+              // onMouseDownCapture={(e) => toggleClass(e)}
+              draggable={true}
+              onDragStart={(e) => {
+                e.preventDefault();
+                e.dataTransfer.setData('text/plain', ''); // Set an empty string as the data
+                // Optionally, you can also set a custom drag image
+                e.dataTransfer.setDragImage(new Image(), 0, 0);
+                toggleClass(e);
+
+              }}
+              className={`tinder--card`}
+              style={{
+                // zIndex:index,
+                //transform: 'rotate(' + -10 + 'deg)',
+                borderRadius: '10px',
+                left: cards.length - index * 2 + 2 + "%",
+              // bottom: cards.length - index * 7 + 7 + "%",
+                boxShadow: 'rgb(52 46 47) 9px -5px -122px',
+              }}
+              key={card?.id}
+              onClick={(e) => {
+                navigate(`/blog?${card.title}`);
+
+              }}
+            >
+              <span className='text-2xl md:text-5xl' style={{ color: 'black', position: "absolute", right: '10%', top: '5%', fontWeight: '900', fontFamily: 'satoshi' }}>{card.title}</span>
+              <span className='text-xl md:text-2xl' style={{ color: 'black', position: "absolute", right: '10%', top: '20%',  fontWeight: '400', fontFamily: 'satoshi' }}>Lorem ipsum dolor sit</span>
+              <img src={require(`../assets/${card?.img}`)} />
+              <h3>{card?.title}</h3>
+            </div>
+          ))}
+        </div>
+
+      <div className="tinder--buttons mt-10">
+        <button
+          style={{ backgroundColor: !isDarkMode ==="dark" ? '#232323' : "white", color: "white", fontWeight: 'bolder' }}
+          id="back" onClick={() => {
+            // console.log(document.getElementById('tinder--cards'))
+            let activeArray = document.querySelectorAll('.tinder--card.removed');
+            // console.log(activeArray)
+            activeArray[activeArray.length - 1]?.classList.remove('removed')
+            let element = activeArray[activeArray.length - 1];
+            if (element === undefined) return;
+            element.style.zIndex = -element.style.zIndex;
+          }}>
+          <img src={require(isDarkMode ? '../assets/back_arrow.png' : '../assets/back_arrow_white.png')} alt="" />
+        </button>
+        <button style={{ backgroundColor: !isDarkMode ==="dark" ? '#232323' : "white", color: "white", fontWeight: 'bolder' }} id="next" onClick={() => {
+          // console.log(document.getElementById('tinder--cards'))
+          let activeArray = document.querySelectorAll('.tinder--card:not(.removed)');
+          activeArray[0]?.classList.add('removed')
+          let element = activeArray[0];
+          if (element === undefined) return;
+          element.style.zIndex = element.style.zIndex.substring(1);
+        }}>
+          <img src={require(isDarkMode ? '../assets/next_arrow.png' : '../assets/next_arrow_white.png')} alt="" />
+        </button>
+      </div>
+    </div>
+      )
+      :
+      (
+        <div
         style={{
           backgroundColor: isDarkMode ==="dark"? 'black' : 'white',
           backgroundSize: 'cover',
@@ -281,5 +361,7 @@ export default function SpotifyCards({ isDarkMode }) {
 
 
     </div>
+      )}
+      </div>
   )
 }
