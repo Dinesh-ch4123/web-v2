@@ -216,7 +216,7 @@ export default function SpotifyCards({ isDarkMode }) {
           // backgroundImage: `url(${backgroundImageNew1})`,
         }} className="tinder">
         <h1
-          className='font-semibold	font-Merriweather	text-center  text-3xl mt-14	'>
+          className='font-semibold	font-Merriweather	text-center  text-2xl md:text-4xl mt-14	'>
           Doing Good = Doing Well
         </h1>
         <div className="tinder--cards h-[50%] w-5/6 pb-20 md:pb-0" id='tinder--cards'>
@@ -293,7 +293,7 @@ export default function SpotifyCards({ isDarkMode }) {
           // backgroundImage: `url(${backgroundImageNew1})`,
         }} className="tinder">
         <h1
-          className='font-semibold	font-Merriweather	text-center  text-3xl mt-14	'>
+          className='font-semibold	font-Merriweather	text-center  text-2xl md:text-4xl mt-14	'>
           Doing Good = Doing Well
         </h1>
         <div className="tinder--cards h-[50%] md:w-2/3 w-5/6 pb-20 md:pb-0" id='tinder--cards'>
