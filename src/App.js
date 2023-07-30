@@ -292,7 +292,7 @@ function App() {
               ) : (
                 <img className="ft-logo" src={lightLogo} />
               )}
-              <h1 className='font-Rymaneco text-3xl'>Sustally</h1>
+              <h1 className='font-Rymaneco text-3xl'>sustally</h1>
             </div>
             <div className='social'>
               <a href='#'>
