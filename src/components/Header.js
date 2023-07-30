@@ -21,7 +21,7 @@ function Header() {
     {/* { mobile ?(
       <div className="spotlight"> </div>
     ) : ( */}
-      <div initial ={{opacity:-1}} animate={{opacity:1}}  style={{ width: `${100 - height}%`,top:'0%', left: '-4%'}} className='absolute hidden md:block'>
+      <div initial ={{opacity:-1}} animate={{opacity:1}}  style={{ width: `${100 - height}%`,top:'0%', left: '-2%'}} className='absolute hidden md:block'>
       <svg
         style={{}}
         width="100%" height="100%" viewBox="0 0 1180 546" fill="none" xmlns="http://www.w3.org/2000/svg">

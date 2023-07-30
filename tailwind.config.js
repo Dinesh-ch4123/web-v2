@@ -20,7 +20,7 @@ module.exports = {
         Roboto : "'Roboto', sans-serif"
       },
       colors: {
-        'custom-purple': '#8E4DFF',
+        'custom-purple': '#7E57C2',
     },
     },
   },
