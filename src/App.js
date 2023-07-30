@@ -21,6 +21,10 @@ import Underline from './components/Underline';
 import Underline1 from './components/Underline1';
 import ProductFeatures from './components/ProductFeatures';
 import CookiesModal from "./components/CookiesModal";
+import moonDark from './assets/moon-dk.svg'
+import moonLight from './assets/moon-lt.svg'
+import sunDark from './assets/sun0dk.svg'
+import sunLight from './assets/sun-lt.svg'
 import Blog from './pages/Blog';
 import TweenMax from 'gsap';
 import {
@@ -163,7 +167,7 @@ function App() {
             )}
 
             <div className="nav-right ">
-              <label className='switch-lable'>{isDarkMode === "dark" ? "Dark Mode:" : "Light Mode:"}</label>
+             {/*<label className='switch-lable'>{isDarkMode === "dark" ? "Dark Mode:" : "Light Mode:"}</label> */} 
               <div>
                 <div
                   onMouseOver={handleMouseOver}
@@ -172,11 +176,11 @@ function App() {
                   <div className='toggle-btn'>
                     <ReactSwitch
                       className="switch"
-                      offColor="#0000"
-                      onColor="#ffff"
-                      onHandleColor="#0000"
-                      checkedIcon={false}
-                      uncheckedIcon={false}
+                      offColor="#00BCD4"
+                      onColor="#FFC107"
+                      onHandleColor="#ffff"
+                      checkedIcon={<img src={sunLight} style={{width:"28px"}}/>}
+                      uncheckedIcon={<img src={moonLight} style={{width:"28px"}} />}
                       onChange={toggleTheme}
                       checked={isDarkMode === "dark"}
                     />
